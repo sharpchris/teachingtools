@@ -1,4 +1,5 @@
 from django.db import models
+from django.conf import settings
 
 # Create your models here.
 class Category(models.Model):
@@ -44,7 +45,13 @@ class Tool(models.Model):
     class Meta:
         verbose_name = "Tool"
     
+# TODO: Consider adding a file cleanup function for when screenshots are deleted from the admin interface
+# https://timonweb.com/posts/cleanup-files-and-images-on-model-delete-in-django/
 class Screenshot(models.Model):
+    def get_upload_path(self, filename):
+        path = f'./{self.tool.slug}/{filename}'
+        return path
+
     tool = models.ForeignKey(Tool, on_delete=models.CASCADE)
-    image = models.ImageField()
+    image = models.ImageField(upload_to=get_upload_path)
 

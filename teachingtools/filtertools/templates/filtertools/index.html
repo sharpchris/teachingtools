@@ -88,30 +88,14 @@
               <!--Screenshots-->
               <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slider>
                 <ul class="uk-slider-items uk-grid">
-                  <li class="uk-width-3-4">
+                  {% for screenshot in tool.screenshot_set.all %}
+                    <li class="uk-width-3-4">
                       <div class="uk-panel" uk-lightbox>
-                          <a href="https://static.voicethread.com/wp-uploads/2015/10/Postcard.png"><img src="https://static.voicethread.com/wp-uploads/2015/10/Postcard.png" alt=""></a>
-                          <div class="uk-position-center uk-panel"><h1>1</h1></div>
+                          <a href="{{ screenshot.image.url }}"><img src="{{ screenshot.image.url }}" alt=""></a>
+                          <div class="uk-position-center uk-panel"></div>
                       </div>
                   </li>
-                  <li class="uk-width-3-4">
-                      <div class="uk-panel" uk-lightbox>
-                        <a href="https://i1.wp.com/www.unthsc.edu/center-for-innovative-learning/wp-content/uploads/sites/35/2015/10/Directreplycopy1.jpg?resize=638%2C462&ssl=1"><img src="https://i1.wp.com/www.unthsc.edu/center-for-innovative-learning/wp-content/uploads/sites/35/2015/10/Directreplycopy1.jpg?resize=638%2C462&ssl=1" alt=""></a>
-                          <div class="uk-position-center uk-panel"><h1>2</h1></div>
-                      </div>
-                  </li>
-                  <li class="uk-width-3-4">
-                      <div class="uk-panel" uk-lightbox>
-                        <a href="https://internal.simmons.edu/wp-content/uploads/2019/07/VoiceThread-1024x664.png"><img src="https://internal.simmons.edu/wp-content/uploads/2019/07/VoiceThread-1024x664.png" alt=""></a>
-                          <div class="uk-position-center uk-panel"><h1>3</h1></div>
-                      </div>
-                  </li>
-                  <li class="uk-width-3-4">
-                      <div class="uk-panel" uk-lightbox>
-                        <a href="https://symposium.music.org/images/11417/VoiceThread-Review-Fig-1.jpg"><img src="https://symposium.music.org/images/11417/VoiceThread-Review-Fig-1.jpg" alt=""></a>
-                          <div class="uk-position-center uk-panel"><h1>4</h1></div>
-                      </div>
-                  </li>
+                  {% endfor %}
               </ul>
               <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slider-item="previous"></a>
               <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slider-item="next"></a>
