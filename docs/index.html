@@ -10,450 +10,729 @@
     <script src="static/filtertools/js/uikit.min.js"></script>
     <script src="static/filtertools/js/uikit-icons.min.js"></script>
   </head>
-  <body>
-    <h1 class="uk-heading-line uk-text-center uk-heading-medium uk-padding"><span style="font-family: Roboto,Arial,sans-serif;">UF Instructional Tools</span></h1>
-    <div class="uk-container" uk-filter="target: .js-filter">
-      <!---Filtering Controls-->
-      <div class="uk-grid-small uk-grid-divider uk-child-width-auto uk-flex uk-flex-center" uk-grid>
-        <div>
-            <ul class="uk-subnav uk-subnav-pill" uk-margin>
-                <li class="uk-active" uk-filter-control><a href="#">Clear all filters</a></li>
-            </ul>
+    <body>
+        <h1 class="uk-heading-line uk-text-center uk-heading-medium uk-padding"><span style="font-family: Roboto,Arial,sans-serif;">UF Instructional Tools</span></h1>
+        
+
+<div class="uk-container" uk-filter="target: .js-filter">
+
+  <!---Filtering Controls-->
+  <div class="uk-grid-small uk-grid-divider uk-child-width-auto uk-flex uk-flex-center" uk-grid>
+    <div>
+        <ul class="uk-subnav uk-subnav-pill" uk-margin>
+            <li class="uk-active" uk-filter-control><a href="#">Clear all filters</a></li>
+        </ul>
+    </div>
+    <div>
+        <div class="uk-subnav">
+          
+            <button uk-filter-control="filter: [data-collab='collab']; group: data-collab" uk-toggle="target: .filter-control-collab" class="filter-control-collab uk-button" uk-tooltip="Tools that allows students to work together">Collaboration</button>
+            <button uk-filter-control="filter: ; group: data-collab" uk-toggle="target: .filter-control-collab" class="filter-control-collab uk-button uk-button-primary" uk-tooltip="Tools that allows students to work together" hidden>Collaboration</button>
+          
+            <button uk-filter-control="filter: [data-video='video']; group: data-video" uk-toggle="target: .filter-control-video" class="filter-control-video uk-button" uk-tooltip="Tools for recording or delivering video content">Videos</button>
+            <button uk-filter-control="filter: ; group: data-video" uk-toggle="target: .filter-control-video" class="filter-control-video uk-button uk-button-primary" uk-tooltip="Tools for recording or delivering video content" hidden>Videos</button>
+          
+            <button uk-filter-control="filter: [data-productivity='productivity']; group: data-productivity" uk-toggle="target: .filter-control-productivity" class="filter-control-productivity uk-button" uk-tooltip="Tools for writing and creating (non-video) content">Productivity</button>
+            <button uk-filter-control="filter: ; group: data-productivity" uk-toggle="target: .filter-control-productivity" class="filter-control-productivity uk-button uk-button-primary" uk-tooltip="Tools for writing and creating (non-video) content" hidden>Productivity</button>
+          
+            <button uk-filter-control="filter: [data-web='web']; group: data-web" uk-toggle="target: .filter-control-web" class="filter-control-web uk-button" uk-tooltip="Tools for creating or hosting small websites">ePortfolios and Websites</button>
+            <button uk-filter-control="filter: ; group: data-web" uk-toggle="target: .filter-control-web" class="filter-control-web uk-button uk-button-primary" uk-tooltip="Tools for creating or hosting small websites" hidden>ePortfolios and Websites</button>
+          
+            <button uk-filter-control="filter: [data-response='response']; group: data-response" uk-toggle="target: .filter-control-response" class="filter-control-response uk-button" uk-tooltip="Tools for giving students an opportunity to engage with prompts during live classes">Classroom Response</button>
+            <button uk-filter-control="filter: ; group: data-response" uk-toggle="target: .filter-control-response" class="filter-control-response uk-button uk-button-primary" uk-tooltip="Tools for giving students an opportunity to engage with prompts during live classes" hidden>Classroom Response</button>
+          
+            <button uk-filter-control="filter: [data-integrity='integrity']; group: data-integrity" uk-toggle="target: .filter-control-integrity" class="filter-control-integrity uk-button" uk-tooltip="Tools to discourage academic dishonesty">Academic Integrity</button>
+            <button uk-filter-control="filter: ; group: data-integrity" uk-toggle="target: .filter-control-integrity" class="filter-control-integrity uk-button uk-button-primary" uk-tooltip="Tools to discourage academic dishonesty" hidden>Academic Integrity</button>
+          
+            <button uk-filter-control="filter: [data-resources='resources']; group: data-resources" uk-toggle="target: .filter-control-resources" class="filter-control-resources uk-button" uk-tooltip="Resources for learning and professional development">Educational Resources</button>
+            <button uk-filter-control="filter: ; group: data-resources" uk-toggle="target: .filter-control-resources" class="filter-control-resources uk-button uk-button-primary" uk-tooltip="Resources for learning and professional development" hidden>Educational Resources</button>
+          
+            <button uk-filter-control="filter: [data-grading='grading']; group: data-grading" uk-toggle="target: .filter-control-grading" class="filter-control-grading uk-button" uk-tooltip="Tools to streamline grading and assessing students&#x27; work">Grading and Assessment</button>
+            <button uk-filter-control="filter: ; group: data-grading" uk-toggle="target: .filter-control-grading" class="filter-control-grading uk-button uk-button-primary" uk-tooltip="Tools to streamline grading and assessing students&#x27; work" hidden>Grading and Assessment</button>
+          
         </div>
-        <div>
-            <div class="uk-subnav">
+        <div class="uk-subnav uk-subnav-pill" uk-margin>
+          <li uk-filter-control="filter: [data-price='0']; group: data-price"><a href="#">Free or Free Tier</a></li>
+          <li uk-filter-control="filter: [data-price='$']; group: data-price"><a href="#">$</a></li>
+          <li uk-filter-control="filter: [data-price='$$']; group: data-price"><a href="#">$$</a></li>
+          <li uk-filter-control="filter: [data-price='$$$']; group: data-price"><a href="#">$$$</a></li>
+        </div>
+        <div class="uk-subnav uk-subnav-pill" uk-margin>
+          <li uk-filter-control="filter: [data-ease='simple']; group: data-ease"><a href="#">Simple</a></li>
+          <li uk-filter-control="filter: [data-ease='moderate']; group: data-ease"><a href="#">Moderate</a></li>
+          <li uk-filter-control="filter: [data-ease='advanced']; group: data-ease"><a href="#">Advanced</a></li>
+        </div>
+    </div>
+  </div>
+
+  <!---Tool Cards Grid-->
+  <ul class="js-filter uk-child-width-1-2 uk-child-width-1-3@m uk-text-center" uk-grid="masonry: true">
+    
+      <li  data-collab="collab"  data-video="video"  data-price='0' data-ease='moderate'>
+
+        <div class="uk-card uk-card-default uk-card-hover">
+            <!--Card Header-->
+          <div class="uk-card-header">
+            <img src="media/voicethread/2d3b19ae.png" alt="VoiceThread">
+          </div>
+
+          <!---Card Body-->
+          <div class="uk-card-body">
+            <p>You might use VoiceThread if...</p>
+            <p>You want students to be able to submit timestamped video or text comments on your or other students&#x27; videos or presentations.</p>
+            <span> Categories: </span>
               
-                <button uk-filter-control="filter: [data-collab='collab']; group: data-collab" uk-toggle="target: .filter-control-collab" class="filter-control-collab uk-button" uk-tooltip="Tools that allows students to work together">Collaboration</button>
-                <button uk-filter-control="filter: ; group: data-collab" uk-toggle="target: .filter-control-collab" class="filter-control-collab uk-button uk-button-primary" uk-tooltip="Tools that allows students to work together" hidden>Collaboration</button>
+                <span class="uk-badge">Collaboration</span>
               
-                <button uk-filter-control="filter: [data-video='video']; group: data-video" uk-toggle="target: .filter-control-video" class="filter-control-video uk-button" uk-tooltip="Tools for recording or delivering video content">Videos</button>
-                <button uk-filter-control="filter: ; group: data-video" uk-toggle="target: .filter-control-video" class="filter-control-video uk-button uk-button-primary" uk-tooltip="Tools for recording or delivering video content" hidden>Videos</button>
+                <span class="uk-badge">Videos</span>
               
-                <button uk-filter-control="filter: [data-productivity='productivity']; group: data-productivity" uk-toggle="target: .filter-control-productivity" class="filter-control-productivity uk-button" uk-tooltip="Tooltip">Productivity</button>
-                <button uk-filter-control="filter: ; group: data-productivity" uk-toggle="target: .filter-control-productivity" class="filter-control-productivity uk-button uk-button-primary" uk-tooltip="Tooltip" hidden>Productivity</button>
+          </div>
+
+          <!--Card Footer-->
+          <div class="uk-card-footer">
+            <button class="uk-button uk-button-default uk-margin-small-right" type="button" uk-toggle="target: #modal-voicethread">More Info</button>
+          </div>
+        </div>
+      </li>
+
+      <!--Tool Modal-->
+      <div id="modal-voicethread" uk-modal >
+        <div class="uk-modal-dialog uk-modal-body">
+          <h2 class="uk-modal-title">VoiceThread</h2>
+          <p>VoiceThread is a collaborative video application which enables instructors and students to create voice-over presentations. Students can create, share, and collaborate on different multi-media projects that include images, videos, audio files, and other kinds of files. These presentations can then be shared with other students in the course for peer review and discussion. When shared, viewers can interact with these presentations asynchronously through text, audio, or video input. VoiceThread can be integrated within Canvas assignments requiring students to either view a presentation, comment on a presentation, or create a VoiceThread. These assignments connect directly to the Canvas gradebook facilitating grading.</p>
+          <p class="uk-text-lead">Pricing Details</p>
+          <p>Placeholder for pricing</p>
+          <p class="uk-text-lead">Links</p>
+          <ul>
+            <li><a href="#">Website</a></li>
+            <li><a href="#">Tool Page</a></li>
+            <li><a href="#">Support Link</a></li>
+          </ul>
+          <p class="uk-text-lead">Screenshots</p>
+          <!--Screenshots-->
+          <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slider>
+            <ul class="uk-slider-items uk-grid">
               
-                <button uk-filter-control="filter: [data-web='web']; group: data-web" uk-toggle="target: .filter-control-web" class="filter-control-web uk-button" uk-tooltip="Tooltip">ePortfolios and Websites</button>
-                <button uk-filter-control="filter: ; group: data-web" uk-toggle="target: .filter-control-web" class="filter-control-web uk-button uk-button-primary" uk-tooltip="Tooltip" hidden>ePortfolios and Websites</button>
-              
-                <button uk-filter-control="filter: [data-response='response']; group: data-response" uk-toggle="target: .filter-control-response" class="filter-control-response uk-button" uk-tooltip="Tools for giving students an opportunity to engage with prompts during live classes">Classroom Response</button>
-                <button uk-filter-control="filter: ; group: data-response" uk-toggle="target: .filter-control-response" class="filter-control-response uk-button uk-button-primary" uk-tooltip="Tools for giving students an opportunity to engage with prompts during live classes" hidden>Classroom Response</button>
-              
-                <button uk-filter-control="filter: [data-integrity='integrity']; group: data-integrity" uk-toggle="target: .filter-control-integrity" class="filter-control-integrity uk-button" uk-tooltip="Tooltip">Academic Integrity</button>
-                <button uk-filter-control="filter: ; group: data-integrity" uk-toggle="target: .filter-control-integrity" class="filter-control-integrity uk-button uk-button-primary" uk-tooltip="Tooltip" hidden>Academic Integrity</button>
-              
-                <button uk-filter-control="filter: [data-resources='resources']; group: data-resources" uk-toggle="target: .filter-control-resources" class="filter-control-resources uk-button" uk-tooltip="Tooltip">Educational Resources</button>
-                <button uk-filter-control="filter: ; group: data-resources" uk-toggle="target: .filter-control-resources" class="filter-control-resources uk-button uk-button-primary" uk-tooltip="Tooltip" hidden>Educational Resources</button>
-              
-                <button uk-filter-control="filter: [data-grading='grading']; group: data-grading" uk-toggle="target: .filter-control-grading" class="filter-control-grading uk-button" uk-tooltip="Tools to streamline grading and assessing students&#x27; work">Grading and Assessment</button>
-                <button uk-filter-control="filter: ; group: data-grading" uk-toggle="target: .filter-control-grading" class="filter-control-grading uk-button uk-button-primary" uk-tooltip="Tools to streamline grading and assessing students&#x27; work" hidden>Grading and Assessment</button>
-              
-            </div>
-            <div class="uk-subnav uk-subnav-pill" uk-margin>
-              <li uk-filter-control="filter: [data-price='0']; group: data-price"><a href="#">Free or Free Tier</a></li>
-              <li uk-filter-control="filter: [data-price='$']; group: data-price"><a href="#">$</a></li>
-              <li uk-filter-control="filter: [data-price='$$']; group: data-price"><a href="#">$$</a></li>
-              <li uk-filter-control="filter: [data-price='$$$']; group: data-price"><a href="#">$$$</a></li>
-            </div>
-            <div class="uk-subnav uk-subnav-pill" uk-margin>
-              <li uk-filter-control="filter: [data-ease='simple']; group: data-ease"><a href="#">Simple</a></li>
-              <li uk-filter-control="filter: [data-ease='moderate']; group: data-ease"><a href="#">Moderate</a></li>
-              <li uk-filter-control="filter: [data-ease='advanced']; group: data-ease"><a href="#">Advanced</a></li>
-            </div>
+          </ul>
+          <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slider-item="previous"></a>
+          <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slider-item="next"></a>
+          </div>
+          <p class="uk-text-right">
+              <button class="uk-button uk-button-default uk-modal-close" type="button">Close</button>
+          </p>
         </div>
       </div>
+      
+    
+      <li  data-response="response"  data-price='$' data-ease='simple'>
 
-      <!---Tool Cards Grid-->
-      <ul class="js-filter uk-child-width-1-2 uk-child-width-1-3@m uk-text-center" uk-grid="masonry: true">
-        
-          <li  data-collab="collab"  data-video="video"  data-price='0' data-ease='moderate'>
-
-            <div class="uk-card uk-card-default uk-card-hover">
-               <!--Card Header-->
-              <div class="uk-card-header">
-                <img src="static/filtertools/images/2d3b19ae.png" alt="VoiceThread">
-              </div>
-
-              <!---Card Body-->
-              <div class="uk-card-body">
-                <p>You might use VoiceThread if...</p>
-                <p>You want students to be able to submit timestamped video or text comments on your or other students&#x27; videos or presentations.</p>
-                <span> Categories: </span>
-                  
-                    <span class="uk-badge">collab</span>
-                  
-                    <span class="uk-badge">video</span>
-                  
-              </div>
-
-              <!--Card Footer-->
-              <div class="uk-card-footer">
-                <button class="uk-button uk-button-default uk-margin-small-right" type="button" uk-toggle="target: #modal-voicethread">More Info</button>
-              </div>
-            </div>
-          </li>
-
-          <!--Tool Modal-->
-          <div id="modal-voicethread" uk-modal >
-            <div class="uk-modal-dialog uk-modal-body">
-              <h2 class="uk-modal-title">VoiceThread</h2>
-              <p>VoiceThread is a collaborative video application which enables instructors and students to create voice-over presentations. Students can create, share, and collaborate on different multi-media projects that include images, videos, audio files, and other kinds of files. These presentations can then be shared with other students in the course for peer review and discussion. When shared, viewers can interact with these presentations asynchronously through text, audio, or video input. VoiceThread can be integrated within Canvas assignments requiring students to either view a presentation, comment on a presentation, or create a VoiceThread. These assignments connect directly to the Canvas gradebook facilitating grading.</p>
-              <p class="uk-text-lead">Pricing Details</p>
-              <p>Placeholder for pricing</p>
-              <p class="uk-text-lead">Links</p>
-              <ul>
-                <li><a href="#">Website</a></li>
-                <li><a href="#">Tool Page</a></li>
-                <li><a href="#">Support Link</a></li>
-              </ul>
-              <p class="uk-text-lead">Screenshots</p>
-              <!--Screenshots-->
-              <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slider>
-                <ul class="uk-slider-items uk-grid">
-                  <li class="uk-width-3-4">
-                      <div class="uk-panel" uk-lightbox>
-                          <a href="https://static.voicethread.com/wp-uploads/2015/10/Postcard.png"><img src="https://static.voicethread.com/wp-uploads/2015/10/Postcard.png" alt=""></a>
-                          <div class="uk-position-center uk-panel"><h1>1</h1></div>
-                      </div>
-                  </li>
-                  <li class="uk-width-3-4">
-                      <div class="uk-panel" uk-lightbox>
-                        <a href="https://i1.wp.com/www.unthsc.edu/center-for-innovative-learning/wp-content/uploads/sites/35/2015/10/Directreplycopy1.jpg?resize=638%2C462&ssl=1"><img src="https://i1.wp.com/www.unthsc.edu/center-for-innovative-learning/wp-content/uploads/sites/35/2015/10/Directreplycopy1.jpg?resize=638%2C462&ssl=1" alt=""></a>
-                          <div class="uk-position-center uk-panel"><h1>2</h1></div>
-                      </div>
-                  </li>
-                  <li class="uk-width-3-4">
-                      <div class="uk-panel" uk-lightbox>
-                        <a href="https://internal.simmons.edu/wp-content/uploads/2019/07/VoiceThread-1024x664.png"><img src="https://internal.simmons.edu/wp-content/uploads/2019/07/VoiceThread-1024x664.png" alt=""></a>
-                          <div class="uk-position-center uk-panel"><h1>3</h1></div>
-                      </div>
-                  </li>
-                  <li class="uk-width-3-4">
-                      <div class="uk-panel" uk-lightbox>
-                        <a href="https://symposium.music.org/images/11417/VoiceThread-Review-Fig-1.jpg"><img src="https://symposium.music.org/images/11417/VoiceThread-Review-Fig-1.jpg" alt=""></a>
-                          <div class="uk-position-center uk-panel"><h1>4</h1></div>
-                      </div>
-                  </li>
-              </ul>
-              <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slider-item="previous"></a>
-              <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slider-item="next"></a>
-              </div>
-              <p class="uk-text-right">
-                  <button class="uk-button uk-button-default uk-modal-close" type="button">Close</button>
-              </p>
-            </div>
+        <div class="uk-card uk-card-default uk-card-hover">
+            <!--Card Header-->
+          <div class="uk-card-header">
+            <img src="media/mentimeter/af7ab370.png" alt="Mentimeter">
           </div>
-          
-        
-          <li  data-response="response"  data-price='$' data-ease='simple'>
 
-            <div class="uk-card uk-card-default uk-card-hover">
-               <!--Card Header-->
-              <div class="uk-card-header">
-                <img src="static/filtertools/images/af7ab370.png" alt="Mentimeter">
-              </div>
-
-              <!---Card Body-->
-              <div class="uk-card-body">
-                <p>You might use Mentimeter if...</p>
-                <p>You have large classes and want to engage your students with simple polls.</p>
-                <span>Category: </span>
-                  
-                    <span class="uk-badge">response</span>
-                  
-              </div>
-
-              <!--Card Footer-->
-              <div class="uk-card-footer">
-                <button class="uk-button uk-button-default uk-margin-small-right" type="button" uk-toggle="target: #modal-mentimeter">More Info</button>
-              </div>
-            </div>
-          </li>
-
-          <!--Tool Modal-->
-          <div id="modal-mentimeter" uk-modal >
-            <div class="uk-modal-dialog uk-modal-body">
-              <h2 class="uk-modal-title">Mentimeter</h2>
-              <p>Make your audience feel involved by enabling them to contribute to presentations with their smartphones and show the results live.</p>
-              <p class="uk-text-lead">Pricing Details</p>
-              <p>Placeholder for pricing</p>
-              <p class="uk-text-lead">Links</p>
-              <ul>
-                <li><a href="#">Website</a></li>
-                <li><a href="#">Tool Page</a></li>
-                <li><a href="#">Support Link</a></li>
-              </ul>
-              <p class="uk-text-lead">Screenshots</p>
-              <!--Screenshots-->
-              <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slider>
-                <ul class="uk-slider-items uk-grid">
-                  <li class="uk-width-3-4">
-                      <div class="uk-panel" uk-lightbox>
-                          <a href="https://static.voicethread.com/wp-uploads/2015/10/Postcard.png"><img src="https://static.voicethread.com/wp-uploads/2015/10/Postcard.png" alt=""></a>
-                          <div class="uk-position-center uk-panel"><h1>1</h1></div>
-                      </div>
-                  </li>
-                  <li class="uk-width-3-4">
-                      <div class="uk-panel" uk-lightbox>
-                        <a href="https://i1.wp.com/www.unthsc.edu/center-for-innovative-learning/wp-content/uploads/sites/35/2015/10/Directreplycopy1.jpg?resize=638%2C462&ssl=1"><img src="https://i1.wp.com/www.unthsc.edu/center-for-innovative-learning/wp-content/uploads/sites/35/2015/10/Directreplycopy1.jpg?resize=638%2C462&ssl=1" alt=""></a>
-                          <div class="uk-position-center uk-panel"><h1>2</h1></div>
-                      </div>
-                  </li>
-                  <li class="uk-width-3-4">
-                      <div class="uk-panel" uk-lightbox>
-                        <a href="https://internal.simmons.edu/wp-content/uploads/2019/07/VoiceThread-1024x664.png"><img src="https://internal.simmons.edu/wp-content/uploads/2019/07/VoiceThread-1024x664.png" alt=""></a>
-                          <div class="uk-position-center uk-panel"><h1>3</h1></div>
-                      </div>
-                  </li>
-                  <li class="uk-width-3-4">
-                      <div class="uk-panel" uk-lightbox>
-                        <a href="https://symposium.music.org/images/11417/VoiceThread-Review-Fig-1.jpg"><img src="https://symposium.music.org/images/11417/VoiceThread-Review-Fig-1.jpg" alt=""></a>
-                          <div class="uk-position-center uk-panel"><h1>4</h1></div>
-                      </div>
-                  </li>
-              </ul>
-              <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slider-item="previous"></a>
-              <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slider-item="next"></a>
-              </div>
-              <p class="uk-text-right">
-                  <button class="uk-button uk-button-default uk-modal-close" type="button">Close</button>
-              </p>
-            </div>
+          <!---Card Body-->
+          <div class="uk-card-body">
+            <p>You might use Mentimeter if...</p>
+            <p>You have large classes and want to engage your students with simple polls.</p>
+            <span>Category: </span>
+              
+                <span class="uk-badge">Classroom Response</span>
+              
           </div>
-          
-        
-          <li  data-video="video"  data-price='0' data-ease='simple'>
 
-            <div class="uk-card uk-card-default uk-card-hover">
-               <!--Card Header-->
-              <div class="uk-card-header">
-                <img src="static/filtertools/images/Flipgrid_Logo_2019_Final.png" alt="Flipgrid">
-              </div>
-
-              <!---Card Body-->
-              <div class="uk-card-body">
-                <p>You might use Flipgrid if...</p>
-                <p>You want to allow students to post short video responses to topics or questions.</p>
-                <span>Category: </span>
-                  
-                    <span class="uk-badge">video</span>
-                  
-              </div>
-
-              <!--Card Footer-->
-              <div class="uk-card-footer">
-                <button class="uk-button uk-button-default uk-margin-small-right" type="button" uk-toggle="target: #modal-flipgrid">More Info</button>
-              </div>
-            </div>
-          </li>
-
-          <!--Tool Modal-->
-          <div id="modal-flipgrid" uk-modal >
-            <div class="uk-modal-dialog uk-modal-body">
-              <h2 class="uk-modal-title">Flipgrid</h2>
-              <p>Creating collaborative learning experiences is imperative to increasing learner engagement and creating a community within your course. Through collaboration, students can work together with peers to negotiate meaning and view topics from different perspectives. Flipgrid is a tool that allows students to collaboratively discuss different topics through video responses to a specific topic. Through this tool, students can easily view and reply to their fellow students&#x27; or teacher&#x27;s posts. From a grading perspective, all student responses are recorded in Speedgrader (Links to an external site.) within Canvas for easy grading.</p>
-              <p class="uk-text-lead">Pricing Details</p>
-              <p>Placeholder for pricing</p>
-              <p class="uk-text-lead">Links</p>
-              <ul>
-                <li><a href="#">Website</a></li>
-                <li><a href="#">Tool Page</a></li>
-                <li><a href="#">Support Link</a></li>
-              </ul>
-              <p class="uk-text-lead">Screenshots</p>
-              <!--Screenshots-->
-              <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slider>
-                <ul class="uk-slider-items uk-grid">
-                  <li class="uk-width-3-4">
-                      <div class="uk-panel" uk-lightbox>
-                          <a href="https://static.voicethread.com/wp-uploads/2015/10/Postcard.png"><img src="https://static.voicethread.com/wp-uploads/2015/10/Postcard.png" alt=""></a>
-                          <div class="uk-position-center uk-panel"><h1>1</h1></div>
-                      </div>
-                  </li>
-                  <li class="uk-width-3-4">
-                      <div class="uk-panel" uk-lightbox>
-                        <a href="https://i1.wp.com/www.unthsc.edu/center-for-innovative-learning/wp-content/uploads/sites/35/2015/10/Directreplycopy1.jpg?resize=638%2C462&ssl=1"><img src="https://i1.wp.com/www.unthsc.edu/center-for-innovative-learning/wp-content/uploads/sites/35/2015/10/Directreplycopy1.jpg?resize=638%2C462&ssl=1" alt=""></a>
-                          <div class="uk-position-center uk-panel"><h1>2</h1></div>
-                      </div>
-                  </li>
-                  <li class="uk-width-3-4">
-                      <div class="uk-panel" uk-lightbox>
-                        <a href="https://internal.simmons.edu/wp-content/uploads/2019/07/VoiceThread-1024x664.png"><img src="https://internal.simmons.edu/wp-content/uploads/2019/07/VoiceThread-1024x664.png" alt=""></a>
-                          <div class="uk-position-center uk-panel"><h1>3</h1></div>
-                      </div>
-                  </li>
-                  <li class="uk-width-3-4">
-                      <div class="uk-panel" uk-lightbox>
-                        <a href="https://symposium.music.org/images/11417/VoiceThread-Review-Fig-1.jpg"><img src="https://symposium.music.org/images/11417/VoiceThread-Review-Fig-1.jpg" alt=""></a>
-                          <div class="uk-position-center uk-panel"><h1>4</h1></div>
-                      </div>
-                  </li>
-              </ul>
-              <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slider-item="previous"></a>
-              <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slider-item="next"></a>
-              </div>
-              <p class="uk-text-right">
-                  <button class="uk-button uk-button-default uk-modal-close" type="button">Close</button>
-              </p>
-            </div>
+          <!--Card Footer-->
+          <div class="uk-card-footer">
+            <button class="uk-button uk-button-default uk-margin-small-right" type="button" uk-toggle="target: #modal-mentimeter">More Info</button>
           </div>
-          
-        
-          <li  data-integrity="integrity"  data-price='0' data-ease='simple'>
+        </div>
+      </li>
 
-            <div class="uk-card uk-card-default uk-card-hover">
-               <!--Card Header-->
-              <div class="uk-card-header">
-                <img src="static/filtertools/images/HonorlockLogo_G-B_FINAL.png" alt="Honorlock">
-              </div>
-
-              <!---Card Body-->
-              <div class="uk-card-body">
-                <p>You might use Honorlock if...</p>
-                <p>You want a online proctoring solution that scales well and does not require students to schedule appointments.</p>
-                <span>Category: </span>
-                  
-                    <span class="uk-badge">integrity</span>
-                  
-              </div>
-
-              <!--Card Footer-->
-              <div class="uk-card-footer">
-                <button class="uk-button uk-button-default uk-margin-small-right" type="button" uk-toggle="target: #modal-honorlock">More Info</button>
-              </div>
-            </div>
-          </li>
-
-          <!--Tool Modal-->
-          <div id="modal-honorlock" uk-modal >
-            <div class="uk-modal-dialog uk-modal-body">
-              <h2 class="uk-modal-title">Honorlock</h2>
-              <p>Honorlock is a proctoring service. However, with Honorlock, students do not have a live proctor monitoring them throughout their exam. Instead, the student&#x27;s video and screen are monitored and recorded, and the Honorlock AI alerts a live pop-in proctor to intervene when necessary.</p>
-              <p class="uk-text-lead">Pricing Details</p>
-              <p>Placeholder for pricing</p>
-              <p class="uk-text-lead">Links</p>
-              <ul>
-                <li><a href="#">Website</a></li>
-                <li><a href="#">Tool Page</a></li>
-                <li><a href="#">Support Link</a></li>
-              </ul>
-              <p class="uk-text-lead">Screenshots</p>
-              <!--Screenshots-->
-              <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slider>
-                <ul class="uk-slider-items uk-grid">
-                  <li class="uk-width-3-4">
-                      <div class="uk-panel" uk-lightbox>
-                          <a href="https://static.voicethread.com/wp-uploads/2015/10/Postcard.png"><img src="https://static.voicethread.com/wp-uploads/2015/10/Postcard.png" alt=""></a>
-                          <div class="uk-position-center uk-panel"><h1>1</h1></div>
-                      </div>
-                  </li>
-                  <li class="uk-width-3-4">
-                      <div class="uk-panel" uk-lightbox>
-                        <a href="https://i1.wp.com/www.unthsc.edu/center-for-innovative-learning/wp-content/uploads/sites/35/2015/10/Directreplycopy1.jpg?resize=638%2C462&ssl=1"><img src="https://i1.wp.com/www.unthsc.edu/center-for-innovative-learning/wp-content/uploads/sites/35/2015/10/Directreplycopy1.jpg?resize=638%2C462&ssl=1" alt=""></a>
-                          <div class="uk-position-center uk-panel"><h1>2</h1></div>
-                      </div>
-                  </li>
-                  <li class="uk-width-3-4">
-                      <div class="uk-panel" uk-lightbox>
-                        <a href="https://internal.simmons.edu/wp-content/uploads/2019/07/VoiceThread-1024x664.png"><img src="https://internal.simmons.edu/wp-content/uploads/2019/07/VoiceThread-1024x664.png" alt=""></a>
-                          <div class="uk-position-center uk-panel"><h1>3</h1></div>
-                      </div>
-                  </li>
-                  <li class="uk-width-3-4">
-                      <div class="uk-panel" uk-lightbox>
-                        <a href="https://symposium.music.org/images/11417/VoiceThread-Review-Fig-1.jpg"><img src="https://symposium.music.org/images/11417/VoiceThread-Review-Fig-1.jpg" alt=""></a>
-                          <div class="uk-position-center uk-panel"><h1>4</h1></div>
-                      </div>
-                  </li>
-              </ul>
-              <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slider-item="previous"></a>
-              <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slider-item="next"></a>
-              </div>
-              <p class="uk-text-right">
-                  <button class="uk-button uk-button-default uk-modal-close" type="button">Close</button>
-              </p>
-            </div>
+      <!--Tool Modal-->
+      <div id="modal-mentimeter" uk-modal >
+        <div class="uk-modal-dialog uk-modal-body">
+          <h2 class="uk-modal-title">Mentimeter</h2>
+          <p>Make your audience feel involved by enabling them to contribute to presentations with their smartphones and show the results live.</p>
+          <p class="uk-text-lead">Pricing Details</p>
+          <p>Placeholder for pricing</p>
+          <p class="uk-text-lead">Links</p>
+          <ul>
+            <li><a href="#">Website</a></li>
+            <li><a href="#">Tool Page</a></li>
+            <li><a href="#">Support Link</a></li>
+          </ul>
+          <p class="uk-text-lead">Screenshots</p>
+          <!--Screenshots-->
+          <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slider>
+            <ul class="uk-slider-items uk-grid">
+              
+                <li class="uk-width-3-4">
+                  <div class="uk-panel" uk-lightbox>
+                      <a href="media/mentimeter/mentimeter_opinon_poll.png"><img src="media/mentimeter/mentimeter_opinon_poll.png" alt=""></a>
+                      <div class="uk-position-center uk-panel"></div>
+                  </div>
+              </li>
+              
+          </ul>
+          <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slider-item="previous"></a>
+          <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slider-item="next"></a>
           </div>
-          
-        
-          <li  data-productivity="productivity"  data-price='0' data-ease='simple'>
+          <p class="uk-text-right">
+              <button class="uk-button uk-button-default uk-modal-close" type="button">Close</button>
+          </p>
+        </div>
+      </div>
+      
+    
+      <li  data-video="video"  data-price='0' data-ease='simple'>
 
-            <div class="uk-card uk-card-default uk-card-hover">
-               <!--Card Header-->
-              <div class="uk-card-header">
-                <img src="static/filtertools/images/DropboxTransp.png" alt="Dropbox">
-              </div>
-
-              <!---Card Body-->
-              <div class="uk-card-body">
-                <p>You might use Dropbox if...</p>
-                <p>You want to store and request files from others in the cloud.</p>
-                <span>Category: </span>
-                  
-                    <span class="uk-badge">productivity</span>
-                  
-              </div>
-
-              <!--Card Footer-->
-              <div class="uk-card-footer">
-                <button class="uk-button uk-button-default uk-margin-small-right" type="button" uk-toggle="target: #modal-dropbox">More Info</button>
-              </div>
-            </div>
-          </li>
-
-          <!--Tool Modal-->
-          <div id="modal-dropbox" uk-modal >
-            <div class="uk-modal-dialog uk-modal-body">
-              <h2 class="uk-modal-title">Dropbox</h2>
-              <p>Dropbox is available to UF faculty and staff for creating, storing, organizing, and sharing files in a secure fashion. Users can share and collaborate on files by adjusting privacy settings and sharing invitations. The Dropbox desktop app is also available to back up files and documents on users&#x27; computers.</p>
-              <p class="uk-text-lead">Pricing Details</p>
-              <p>Placeholder for pricing</p>
-              <p class="uk-text-lead">Links</p>
-              <ul>
-                <li><a href="#">Website</a></li>
-                <li><a href="#">Tool Page</a></li>
-                <li><a href="#">Support Link</a></li>
-              </ul>
-              <p class="uk-text-lead">Screenshots</p>
-              <!--Screenshots-->
-              <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slider>
-                <ul class="uk-slider-items uk-grid">
-                  <li class="uk-width-3-4">
-                      <div class="uk-panel" uk-lightbox>
-                          <a href="https://static.voicethread.com/wp-uploads/2015/10/Postcard.png"><img src="https://static.voicethread.com/wp-uploads/2015/10/Postcard.png" alt=""></a>
-                          <div class="uk-position-center uk-panel"><h1>1</h1></div>
-                      </div>
-                  </li>
-                  <li class="uk-width-3-4">
-                      <div class="uk-panel" uk-lightbox>
-                        <a href="https://i1.wp.com/www.unthsc.edu/center-for-innovative-learning/wp-content/uploads/sites/35/2015/10/Directreplycopy1.jpg?resize=638%2C462&ssl=1"><img src="https://i1.wp.com/www.unthsc.edu/center-for-innovative-learning/wp-content/uploads/sites/35/2015/10/Directreplycopy1.jpg?resize=638%2C462&ssl=1" alt=""></a>
-                          <div class="uk-position-center uk-panel"><h1>2</h1></div>
-                      </div>
-                  </li>
-                  <li class="uk-width-3-4">
-                      <div class="uk-panel" uk-lightbox>
-                        <a href="https://internal.simmons.edu/wp-content/uploads/2019/07/VoiceThread-1024x664.png"><img src="https://internal.simmons.edu/wp-content/uploads/2019/07/VoiceThread-1024x664.png" alt=""></a>
-                          <div class="uk-position-center uk-panel"><h1>3</h1></div>
-                      </div>
-                  </li>
-                  <li class="uk-width-3-4">
-                      <div class="uk-panel" uk-lightbox>
-                        <a href="https://symposium.music.org/images/11417/VoiceThread-Review-Fig-1.jpg"><img src="https://symposium.music.org/images/11417/VoiceThread-Review-Fig-1.jpg" alt=""></a>
-                          <div class="uk-position-center uk-panel"><h1>4</h1></div>
-                      </div>
-                  </li>
-              </ul>
-              <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slider-item="previous"></a>
-              <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slider-item="next"></a>
-              </div>
-              <p class="uk-text-right">
-                  <button class="uk-button uk-button-default uk-modal-close" type="button">Close</button>
-              </p>
-            </div>
+        <div class="uk-card uk-card-default uk-card-hover">
+            <!--Card Header-->
+          <div class="uk-card-header">
+            <img src="media/flipgrid/Flipgrid_Logo_2019_Final.png" alt="Flipgrid">
           </div>
-          
-        
-      </ul>
 
-    </div>
-  </body>
+          <!---Card Body-->
+          <div class="uk-card-body">
+            <p>You might use Flipgrid if...</p>
+            <p>You want to allow students to post short video responses to topics or questions.</p>
+            <span>Category: </span>
+              
+                <span class="uk-badge">Videos</span>
+              
+          </div>
+
+          <!--Card Footer-->
+          <div class="uk-card-footer">
+            <button class="uk-button uk-button-default uk-margin-small-right" type="button" uk-toggle="target: #modal-flipgrid">More Info</button>
+          </div>
+        </div>
+      </li>
+
+      <!--Tool Modal-->
+      <div id="modal-flipgrid" uk-modal >
+        <div class="uk-modal-dialog uk-modal-body">
+          <h2 class="uk-modal-title">Flipgrid</h2>
+          <p>Creating collaborative learning experiences is imperative to increasing learner engagement and creating a community within your course. Through collaboration, students can work together with peers to negotiate meaning and view topics from different perspectives. Flipgrid is a tool that allows students to collaboratively discuss different topics through video responses to a specific topic. Through this tool, students can easily view and reply to their fellow students&#x27; or teacher&#x27;s posts. From a grading perspective, all student responses are recorded in Speedgrader (Links to an external site.) within Canvas for easy grading.</p>
+          <p class="uk-text-lead">Pricing Details</p>
+          <p>Placeholder for pricing</p>
+          <p class="uk-text-lead">Links</p>
+          <ul>
+            <li><a href="#">Website</a></li>
+            <li><a href="#">Tool Page</a></li>
+            <li><a href="#">Support Link</a></li>
+          </ul>
+          <p class="uk-text-lead">Screenshots</p>
+          <!--Screenshots-->
+          <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slider>
+            <ul class="uk-slider-items uk-grid">
+              
+          </ul>
+          <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slider-item="previous"></a>
+          <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slider-item="next"></a>
+          </div>
+          <p class="uk-text-right">
+              <button class="uk-button uk-button-default uk-modal-close" type="button">Close</button>
+          </p>
+        </div>
+      </div>
+      
+    
+      <li  data-integrity="integrity"  data-price='0' data-ease='simple'>
+
+        <div class="uk-card uk-card-default uk-card-hover">
+            <!--Card Header-->
+          <div class="uk-card-header">
+            <img src="media/honorlock/HonorlockLogo_G-B_FINAL.png" alt="Honorlock">
+          </div>
+
+          <!---Card Body-->
+          <div class="uk-card-body">
+            <p>You might use Honorlock if...</p>
+            <p>You want a online proctoring solution that scales well and does not require students to schedule appointments.</p>
+            <span>Category: </span>
+              
+                <span class="uk-badge">Academic Integrity</span>
+              
+          </div>
+
+          <!--Card Footer-->
+          <div class="uk-card-footer">
+            <button class="uk-button uk-button-default uk-margin-small-right" type="button" uk-toggle="target: #modal-honorlock">More Info</button>
+          </div>
+        </div>
+      </li>
+
+      <!--Tool Modal-->
+      <div id="modal-honorlock" uk-modal >
+        <div class="uk-modal-dialog uk-modal-body">
+          <h2 class="uk-modal-title">Honorlock</h2>
+          <p>Honorlock is a proctoring service. However, with Honorlock, students do not have a live proctor monitoring them throughout their exam. Instead, the student&#x27;s video and screen are monitored and recorded, and the Honorlock AI alerts a live pop-in proctor to intervene when necessary.</p>
+          <p class="uk-text-lead">Pricing Details</p>
+          <p>Placeholder for pricing</p>
+          <p class="uk-text-lead">Links</p>
+          <ul>
+            <li><a href="#">Website</a></li>
+            <li><a href="#">Tool Page</a></li>
+            <li><a href="#">Support Link</a></li>
+          </ul>
+          <p class="uk-text-lead">Screenshots</p>
+          <!--Screenshots-->
+          <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slider>
+            <ul class="uk-slider-items uk-grid">
+              
+          </ul>
+          <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slider-item="previous"></a>
+          <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slider-item="next"></a>
+          </div>
+          <p class="uk-text-right">
+              <button class="uk-button uk-button-default uk-modal-close" type="button">Close</button>
+          </p>
+        </div>
+      </div>
+      
+    
+      <li  data-productivity="productivity"  data-price='0' data-ease='simple'>
+
+        <div class="uk-card uk-card-default uk-card-hover">
+            <!--Card Header-->
+          <div class="uk-card-header">
+            <img src="media/dropbox/DropboxTransp.png" alt="Dropbox">
+          </div>
+
+          <!---Card Body-->
+          <div class="uk-card-body">
+            <p>You might use Dropbox if...</p>
+            <p>You want to store and request files from others in the cloud.</p>
+            <span>Category: </span>
+              
+                <span class="uk-badge">Productivity</span>
+              
+          </div>
+
+          <!--Card Footer-->
+          <div class="uk-card-footer">
+            <button class="uk-button uk-button-default uk-margin-small-right" type="button" uk-toggle="target: #modal-dropbox">More Info</button>
+          </div>
+        </div>
+      </li>
+
+      <!--Tool Modal-->
+      <div id="modal-dropbox" uk-modal >
+        <div class="uk-modal-dialog uk-modal-body">
+          <h2 class="uk-modal-title">Dropbox</h2>
+          <p>Dropbox is available to UF faculty and staff for creating, storing, organizing, and sharing files in a secure fashion. Users can share and collaborate on files by adjusting privacy settings and sharing invitations. The Dropbox desktop app is also available to back up files and documents on users&#x27; computers.</p>
+          <p class="uk-text-lead">Pricing Details</p>
+          <p>Placeholder for pricing</p>
+          <p class="uk-text-lead">Links</p>
+          <ul>
+            <li><a href="#">Website</a></li>
+            <li><a href="#">Tool Page</a></li>
+            <li><a href="#">Support Link</a></li>
+          </ul>
+          <p class="uk-text-lead">Screenshots</p>
+          <!--Screenshots-->
+          <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slider>
+            <ul class="uk-slider-items uk-grid">
+              
+          </ul>
+          <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slider-item="previous"></a>
+          <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slider-item="next"></a>
+          </div>
+          <p class="uk-text-right">
+              <button class="uk-button uk-button-default uk-modal-close" type="button">Close</button>
+          </p>
+        </div>
+      </div>
+      
+    
+      <li  data-integrity="integrity"  data-price='0' data-ease='moderate'>
+
+        <div class="uk-card uk-card-default uk-card-hover">
+            <!--Card Header-->
+          <div class="uk-card-header">
+            <img src="media/proctoru/logo.png" alt="ProctorU">
+          </div>
+
+          <!---Card Body-->
+          <div class="uk-card-body">
+            <p>You might use ProctorU if...</p>
+            <p>You want to have students schedule their quizzes with live, remote proctors that observe the students while they take their quiz.</p>
+            <span>Category: </span>
+              
+                <span class="uk-badge">Academic Integrity</span>
+              
+          </div>
+
+          <!--Card Footer-->
+          <div class="uk-card-footer">
+            <button class="uk-button uk-button-default uk-margin-small-right" type="button" uk-toggle="target: #modal-proctoru">More Info</button>
+          </div>
+        </div>
+      </li>
+
+      <!--Tool Modal-->
+      <div id="modal-proctoru" uk-modal >
+        <div class="uk-modal-dialog uk-modal-body">
+          <h2 class="uk-modal-title">ProctorU</h2>
+          <p>ProctorU is a service in which a live remote proctor monitors students and their web activity from Chrome or Firefox while they are taking an exam. Instructors can set guidelines for proctors and view recordings later to evaluate specific instances that a proctor flags. When using this service, students will have the option to either take the exam on-demand, meaning whenever they have time, or to register for an appointment ahead of time. Registering ahead of time will ensure that there are enough proctors available.</p>
+          <p class="uk-text-lead">Pricing Details</p>
+          <p>Placeholder for pricing</p>
+          <p class="uk-text-lead">Links</p>
+          <ul>
+            <li><a href="#">Website</a></li>
+            <li><a href="#">Tool Page</a></li>
+            <li><a href="#">Support Link</a></li>
+          </ul>
+          <p class="uk-text-lead">Screenshots</p>
+          <!--Screenshots-->
+          <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slider>
+            <ul class="uk-slider-items uk-grid">
+              
+                <li class="uk-width-3-4">
+                  <div class="uk-panel" uk-lightbox>
+                      <a href="media/proctoru/proctoru_screenshot.jpg"><img src="media/proctoru/proctoru_screenshot.jpg" alt=""></a>
+                      <div class="uk-position-center uk-panel"></div>
+                  </div>
+              </li>
+              
+                <li class="uk-width-3-4">
+                  <div class="uk-panel" uk-lightbox>
+                      <a href="media/proctoru/proctoru_headshot.jpg"><img src="media/proctoru/proctoru_headshot.jpg" alt=""></a>
+                      <div class="uk-position-center uk-panel"></div>
+                  </div>
+              </li>
+              
+                <li class="uk-width-3-4">
+                  <div class="uk-panel" uk-lightbox>
+                      <a href="media/proctoru/How-To-Schedule-An-Exam-ProctorU.gif"><img src="media/proctoru/How-To-Schedule-An-Exam-ProctorU.gif" alt=""></a>
+                      <div class="uk-position-center uk-panel"></div>
+                  </div>
+              </li>
+              
+          </ul>
+          <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slider-item="previous"></a>
+          <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slider-item="next"></a>
+          </div>
+          <p class="uk-text-right">
+              <button class="uk-button uk-button-default uk-modal-close" type="button">Close</button>
+          </p>
+        </div>
+      </div>
+      
+    
+      <li  data-resources="resources"  data-price='0' data-ease='simple'>
+
+        <div class="uk-card uk-card-default uk-card-hover">
+            <!--Card Header-->
+          <div class="uk-card-header">
+            <img src="media/linkedinlearning/linkedin-900x400.png" alt="LinkedIn Learning">
+          </div>
+
+          <!---Card Body-->
+          <div class="uk-card-body">
+            <p>You might use LinkedIn Learning if...</p>
+            <p>You want to learn about a topic or skill, or you want to provide students with resources to learn a skill.</p>
+            <span>Category: </span>
+              
+                <span class="uk-badge">Educational Resources</span>
+              
+          </div>
+
+          <!--Card Footer-->
+          <div class="uk-card-footer">
+            <button class="uk-button uk-button-default uk-margin-small-right" type="button" uk-toggle="target: #modal-linkedinlearning">More Info</button>
+          </div>
+        </div>
+      </li>
+
+      <!--Tool Modal-->
+      <div id="modal-linkedinlearning" uk-modal >
+        <div class="uk-modal-dialog uk-modal-body">
+          <h2 class="uk-modal-title">LinkedIn Learning</h2>
+          <p>LinkedIn Learning offers easy-to-access courses in a wide variety of topics. Courses are presented in a video format and are broken down into bite-size lessons with supplemental exercise and practice files that are free for faculty, staff, and students at the University of Florida to use. Most videos also include closed captioning and a searchable transcript.</p>
+          <p class="uk-text-lead">Pricing Details</p>
+          <p>Placeholder for pricing</p>
+          <p class="uk-text-lead">Links</p>
+          <ul>
+            <li><a href="#">Website</a></li>
+            <li><a href="#">Tool Page</a></li>
+            <li><a href="#">Support Link</a></li>
+          </ul>
+          <p class="uk-text-lead">Screenshots</p>
+          <!--Screenshots-->
+          <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slider>
+            <ul class="uk-slider-items uk-grid">
+              
+                <li class="uk-width-3-4">
+                  <div class="uk-panel" uk-lightbox>
+                      <a href="media/linkedinlearning/li_screenshot.jpg"><img src="media/linkedinlearning/li_screenshot.jpg" alt=""></a>
+                      <div class="uk-position-center uk-panel"></div>
+                  </div>
+              </li>
+              
+                <li class="uk-width-3-4">
+                  <div class="uk-panel" uk-lightbox>
+                      <a href="media/linkedinlearning/1559831964561_LinkedInLearning_Screen_SHot.JPG"><img src="media/linkedinlearning/1559831964561_LinkedInLearning_Screen_SHot.JPG" alt=""></a>
+                      <div class="uk-position-center uk-panel"></div>
+                  </div>
+              </li>
+              
+          </ul>
+          <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slider-item="previous"></a>
+          <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slider-item="next"></a>
+          </div>
+          <p class="uk-text-right">
+              <button class="uk-button uk-button-default uk-modal-close" type="button">Close</button>
+          </p>
+        </div>
+      </div>
+      
+    
+      <li  data-integrity="integrity"  data-price='0' data-ease='moderate'>
+
+        <div class="uk-card uk-card-default uk-card-hover">
+            <!--Card Header-->
+          <div class="uk-card-header">
+            <img src="media/turnitin/92b11cac.png" alt="Turnitin">
+          </div>
+
+          <!---Card Body-->
+          <div class="uk-card-body">
+            <p>You might use Turnitin if...</p>
+            <p>You want to evaluate students&#x27; writing for originality.</p>
+            <span>Category: </span>
+              
+                <span class="uk-badge">Academic Integrity</span>
+              
+          </div>
+
+          <!--Card Footer-->
+          <div class="uk-card-footer">
+            <button class="uk-button uk-button-default uk-margin-small-right" type="button" uk-toggle="target: #modal-turnitin">More Info</button>
+          </div>
+        </div>
+      </li>
+
+      <!--Tool Modal-->
+      <div id="modal-turnitin" uk-modal >
+        <div class="uk-modal-dialog uk-modal-body">
+          <h2 class="uk-modal-title">Turnitin</h2>
+          <p>Turnitin is a plagiarism detection tool that compares student writing submissions to entries in a repository comprised of both papers submitted by other students and online websites/databases. This tool can be used as a standalone tool for students to submit to directly, or can be integrated into assignments within e-Learning (Canvas). Each submission receives a score, allowing instructors to take appropriate action when necessary.
+
+Depending on assignment or submission settings, Turnitin allows students to see whether their work is flagged for plagiarism and make necessary adjustments before their final submission. This can build students’ skills in self-assessment of their own writing and will help them identify where proper citations are needed. 
+
+Since Turnitin&#x27;s default settings save and compare papers to the student repository, be careful with the settings when students are submitting more than one draft of an assignment.</p>
+          <p class="uk-text-lead">Pricing Details</p>
+          <p>Placeholder for pricing</p>
+          <p class="uk-text-lead">Links</p>
+          <ul>
+            <li><a href="#">Website</a></li>
+            <li><a href="#">Tool Page</a></li>
+            <li><a href="#">Support Link</a></li>
+          </ul>
+          <p class="uk-text-lead">Screenshots</p>
+          <!--Screenshots-->
+          <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slider>
+            <ul class="uk-slider-items uk-grid">
+              
+                <li class="uk-width-3-4">
+                  <div class="uk-panel" uk-lightbox>
+                      <a href="media/turnitin/turnitin_screenshot.png"><img src="media/turnitin/turnitin_screenshot.png" alt=""></a>
+                      <div class="uk-position-center uk-panel"></div>
+                  </div>
+              </li>
+              
+          </ul>
+          <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slider-item="previous"></a>
+          <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slider-item="next"></a>
+          </div>
+          <p class="uk-text-right">
+              <button class="uk-button uk-button-default uk-modal-close" type="button">Close</button>
+          </p>
+        </div>
+      </div>
+      
+    
+      <li  data-video="video"  data-price='0' data-ease='moderate'>
+
+        <div class="uk-card uk-card-default uk-card-hover">
+            <!--Card Header-->
+          <div class="uk-card-header">
+            <img src="media/mediasite/mediasite_logo.png" alt="Mediasite">
+          </div>
+
+          <!---Card Body-->
+          <div class="uk-card-body">
+            <p>You might use Mediasite if...</p>
+            <p>You want to record and share lectures with a slide deck that can be viewed simultaneously</p>
+            <span>Category: </span>
+              
+                <span class="uk-badge">Videos</span>
+              
+          </div>
+
+          <!--Card Footer-->
+          <div class="uk-card-footer">
+            <button class="uk-button uk-button-default uk-margin-small-right" type="button" uk-toggle="target: #modal-mediasite">More Info</button>
+          </div>
+        </div>
+      </li>
+
+      <!--Tool Modal-->
+      <div id="modal-mediasite" uk-modal >
+        <div class="uk-modal-dialog uk-modal-body">
+          <h2 class="uk-modal-title">Mediasite</h2>
+          <p>Mediasite is a tool that can be used to create high-quality videos and streaming content. Mediasite is ideal  for highly visual presentations and online lectures, as it allows viewers to simultaneously see the presentation and the speaker. Mediasite videos can be produced through various means, including the MyMediasite desktop recorder, the TechSmith Relay desktop recorder, Mediasite recording appliances found throughout campus classrooms and lecture halls, and the UFIT Academic Media Productions studios (Links to an external site.). Both the MyMediasite desktop recorder and the TechSmith Relay recorder are free to download and use for all UF faculty, staff, and students.</p>
+          <p class="uk-text-lead">Pricing Details</p>
+          <p>Placeholder for pricing</p>
+          <p class="uk-text-lead">Links</p>
+          <ul>
+            <li><a href="#">Website</a></li>
+            <li><a href="#">Tool Page</a></li>
+            <li><a href="#">Support Link</a></li>
+          </ul>
+          <p class="uk-text-lead">Screenshots</p>
+          <!--Screenshots-->
+          <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slider>
+            <ul class="uk-slider-items uk-grid">
+              
+          </ul>
+          <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slider-item="previous"></a>
+          <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slider-item="next"></a>
+          </div>
+          <p class="uk-text-right">
+              <button class="uk-button uk-button-default uk-modal-close" type="button">Close</button>
+          </p>
+        </div>
+      </div>
+      
+    
+      <li  data-collab="collab"  data-video="video"  data-response="response"  data-price='0' data-ease='simple'>
+
+        <div class="uk-card uk-card-default uk-card-hover">
+            <!--Card Header-->
+          <div class="uk-card-header">
+            <img src="media/zoom/Zoom-Logo.jpg" alt="Zoom">
+          </div>
+
+          <!---Card Body-->
+          <div class="uk-card-body">
+            <p>You might use Zoom if...</p>
+            <p>You want to video conference with others, hold live classes, share your screen, or pre-record your lectures.</p>
+            <span> Categories: </span>
+              
+                <span class="uk-badge">Collaboration</span>
+              
+                <span class="uk-badge">Videos</span>
+              
+                <span class="uk-badge">Classroom Response</span>
+              
+          </div>
+
+          <!--Card Footer-->
+          <div class="uk-card-footer">
+            <button class="uk-button uk-button-default uk-margin-small-right" type="button" uk-toggle="target: #modal-zoom">More Info</button>
+          </div>
+        </div>
+      </li>
+
+      <!--Tool Modal-->
+      <div id="modal-zoom" uk-modal >
+        <div class="uk-modal-dialog uk-modal-body">
+          <h2 class="uk-modal-title">Zoom</h2>
+          <p>Zoom is an easy-to-use tool that is integrated in Canvas and available for all at UF to use. Zoom allows users to collaborate, and hold live meetings of up to 300 participants, hold classes, and office hours. Class and video lectures can be held synchronously or recorded asynchronously for later access by students. Zoom recordings can be saved to the cloud or to your local computer. Automatic transcripts can be generated with recorded lectures to assist in creating accessible video content.</p>
+          <p class="uk-text-lead">Pricing Details</p>
+          <p>Placeholder for pricing</p>
+          <p class="uk-text-lead">Links</p>
+          <ul>
+            <li><a href="#">Website</a></li>
+            <li><a href="#">Tool Page</a></li>
+            <li><a href="#">Support Link</a></li>
+          </ul>
+          <p class="uk-text-lead">Screenshots</p>
+          <!--Screenshots-->
+          <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slider>
+            <ul class="uk-slider-items uk-grid">
+              
+          </ul>
+          <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slider-item="previous"></a>
+          <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slider-item="next"></a>
+          </div>
+          <p class="uk-text-right">
+              <button class="uk-button uk-button-default uk-modal-close" type="button">Close</button>
+          </p>
+        </div>
+      </div>
+      
+    
+      <li  data-productivity="productivity"  data-web="web"  data-price='0' data-ease='simple'>
+
+        <div class="uk-card uk-card-default uk-card-hover">
+            <!--Card Header-->
+          <div class="uk-card-header">
+            <img src="media/google-sites/google-sites-1024x322.jpg" alt="Google Sites">
+          </div>
+
+          <!---Card Body-->
+          <div class="uk-card-body">
+            <p>You might use Google Sites if...</p>
+            <p>You want to build a website to host an ePortfolio, share information, or provide links to resources.</p>
+            <span> Categories: </span>
+              
+                <span class="uk-badge">Productivity</span>
+              
+                <span class="uk-badge">ePortfolios and Websites</span>
+              
+          </div>
+
+          <!--Card Footer-->
+          <div class="uk-card-footer">
+            <button class="uk-button uk-button-default uk-margin-small-right" type="button" uk-toggle="target: #modal-google-sites">More Info</button>
+          </div>
+        </div>
+      </li>
+
+      <!--Tool Modal-->
+      <div id="modal-google-sites" uk-modal >
+        <div class="uk-modal-dialog uk-modal-body">
+          <h2 class="uk-modal-title">Google Sites</h2>
+          <p>Google Sites is straightforward website builder that can be used to host your work, showcase an e-portfolio, or provide access to information that you want to make available to the public.</p>
+          <p class="uk-text-lead">Pricing Details</p>
+          <p>Placeholder for pricing</p>
+          <p class="uk-text-lead">Links</p>
+          <ul>
+            <li><a href="#">Website</a></li>
+            <li><a href="#">Tool Page</a></li>
+            <li><a href="#">Support Link</a></li>
+          </ul>
+          <p class="uk-text-lead">Screenshots</p>
+          <!--Screenshots-->
+          <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slider>
+            <ul class="uk-slider-items uk-grid">
+              
+                <li class="uk-width-3-4">
+                  <div class="uk-panel" uk-lightbox>
+                      <a href="media/google-sites/sites_cats_in_human_affairs.png"><img src="media/google-sites/sites_cats_in_human_affairs.png" alt=""></a>
+                      <div class="uk-position-center uk-panel"></div>
+                  </div>
+              </li>
+              
+          </ul>
+          <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slider-item="previous"></a>
+          <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slider-item="next"></a>
+          </div>
+          <p class="uk-text-right">
+              <button class="uk-button uk-button-default uk-modal-close" type="button">Close</button>
+          </p>
+        </div>
+      </div>
+      
+    
+  </ul>
+
+</div>
+
+    </body>
 </html>

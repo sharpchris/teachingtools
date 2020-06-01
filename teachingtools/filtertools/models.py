@@ -15,8 +15,12 @@ class Category(models.Model):
         verbose_name_plural = "Categories"
 
 class Tool(models.Model):
+    def get_upload_path(self, filename):
+        path = f'./{self.slug}/{filename}'
+        return path
+
     title = models.CharField(max_length=255)
-    logo = models.ImageField()
+    logo = models.ImageField(upload_to=get_upload_path)
     learning_link = models.URLField()
     description = models.TextField(help_text="A description of the tool that is only visible once the \"Read More\" button is clicked.")
     use_case = models.TextField(help_text="Should answer the prompt, \"You might use this tool if...\" and be written in the 2nd person.")
