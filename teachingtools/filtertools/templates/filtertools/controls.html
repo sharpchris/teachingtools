@@ -1,36 +1,42 @@
 <!---Filtering Controls-->
-  <div class="uk-flex uk-flex-center" uk-margin>
-    <div>
-        <ul class="uk-subnav uk-subnav-pill uk-padding-remove" uk-margin>
-            <li class="uk-active" uk-filter-control><a href="#">Clear all filters</a></li>
-        </ul>
+<div class="uk-flex uk-flex-center" uk-margin>
+  <div>
+      <ul class="uk-subnav uk-subnav-pill uk-padding-remove" uk-margin>
+          <li class="uk-active" uk-filter-control style="margin-left:-40px"><a href="#">Clear all filters</a></li>
+      </ul>
+  </div>
+</div>
+<div class="uk-container uk-margin">
+  <div class="uk-grid-small" uk-grid>
+    <div class="uk-width-1-1 uk-text-center"><h3 class="uk-heading-divider" style="margin-left:-40px">Categories</h3></div>
+  </div>
+  <div class="uk-grid-small" uk-grid>
+    <div class="uk-width-1-1 uk-text-center uk-flex-center uk-subnav uk-subnav-pill">
+      {% for category in categories %}
+        <li uk-filter-control="filter: [data-{{ category.option }}='{{ category.option }}']; group: data-{{ category.option }}" uk-toggle="target: .filter-control-{{ category.option }}" class="filter-control-{{ category.option }} uk-button" uk-tooltip="{{ category.tooltip }}">{{ category.verbose_name }}</li>
+        <li uk-filter-control="filter: ; group: data-{{ category.option }}" uk-toggle="target: .filter-control-{{ category.option }}" class="filter-control-{{ category.option }} uk-button uk-button-primary" uk-tooltip="{{ category.tooltip }}" hidden>{{ category.verbose_name }}</li>
+      {% endfor %}
     </div>
   </div>
-  <div class="uk-container uk-margin">
-    <div class="uk-grid-small" uk-grid>
-      <div class="uk-width-1-1 uk-text-center"><h3 class="uk-heading-divider">Categories</h3></div>
-    </div>
-    <div class="uk-grid-small" uk-grid>
-      <div class="uk-width-1-1 uk-flex-center uk-flex-wrap uk-text-center uk-remove-margin">
-        {% for category in categories %}
-          <button uk-filter-control="filter: [data-{{ category.option }}='{{ category.option }}']; group: data-{{ category.option }}" uk-toggle="target: .filter-control-{{ category.option }}" class="filter-control-{{ category.option }} uk-button" uk-tooltip="{{ category.tooltip }}">{{ category.verbose_name }}</button>
-          <button uk-filter-control="filter: ; group: data-{{ category.option }}" uk-toggle="target: .filter-control-{{ category.option }}" class="filter-control-{{ category.option }} uk-button uk-button-primary uk-button" uk-tooltip="{{ category.tooltip }}" hidden>{{ category.verbose_name }}</button>
-        {% endfor %}
+  <div class="uk-grid-small" uk-grid>
+    <div class="uk-width-1-2">
+      <h3 class="uk-heading-divider uk-text-center" style="margin-left:-40px">Pricing</h3>
+      <div class="uk-width-1-1 uk-flex-column uk-text-center uk-subnav uk-subnav-pill" uk-switcher>
+        <li uk-filter-control="filter: ; group: data-price" class="uk-button uk-width-1-1"><a href="#">Any Pricing Structure</a></li>
+        <li uk-filter-control="filter: [data-price='free']; group: data-price" class="uk-button uk-width-1-1"><a href="#">Free or Free Tier Available</a></li>
+        <li uk-filter-control="filter: [data-price='facultyPays']; group: data-price" class="uk-button uk-width-1-1"><a href="#">Paid for by Faculty or Department</a></li>  
+        <li uk-filter-control="filter: [data-price='studentPays']; group: data-price" class="uk-button uk-width-1-1"><a href="#">Paid for by Student</a></li>
+        <li uk-filter-control="filter: [data-price='bothPay']; group: data-price" class="uk-button uk-width-1-1"><a href="#">Paid for by Both/Either</a></li>
       </div>
     </div>
-    <div class="uk-grid-small" uk-grid>
-      <div class="uk-width-1-2 uk-flex-column uk-text-center">
-        <div class="uk-width-1-1 uk-text-center"><h3 class="uk-heading-divider">Pricing</h3></div>
-        <button uk-filter-control="filter: [data-price='free']; group: data-price" class="uk-button uk-width-1-1">Free or Free Tier Available</button>
-        <button uk-filter-control="filter: [data-price='facultyPays']; group: data-price" class="uk-button uk-width-1-1">Paid for by Faculty or Department</button>
-        <button uk-filter-control="filter: [data-price='studentPays']; group: data-price" class="uk-button uk-width-1-1">Paid for by Student</button>
-        <button uk-filter-control="filter: [data-price='bothPay']; group: data-price" class="uk-button uk-width-1-1">Paid for by Both/Either</button>
-      </div>
-      <div class="uk-width-1-2 uk-flex-column uk-text-center">
-        <div class="uk-width-1-1 uk-text-center"><h3 class="uk-heading-divider">Complexity</h3></div>
-        <button uk-filter-control="filter: [data-ease='simple']; group: data-ease" class="uk-button uk-width-1-1">Simple</button>
-        <button uk-filter-control="filter: [data-ease='moderate']; group: data-ease" class="uk-button uk-width-1-1">Moderate</button>
-        <button uk-filter-control="filter: [data-ease='advanced']; group: data-ease" class="uk-button uk-width-1-1">Advanced</button>
+    <div class="uk-width-1-2">
+      <h3 class="uk-heading-divider uk-text-center" style="margin-left:-40px">Complexity</h3>
+      <div class="uk-width-1-1 uk-flex-column uk-text-center uk-subnav uk-subnav-pill" uk-switcher>
+        <li uk-filter-control="filter: ; group: data-ease" class="uk-button uk-width-1-1"><a href="#">Any Complexity Level</a></li>
+        <li uk-filter-control="filter: [data-ease='simple']; group: data-ease" class="uk-button uk-width-1-1"><a href="#">Simple</a></li>
+        <li uk-filter-control="filter: [data-ease='moderate']; group: data-ease" class="uk-button uk-width-1-1"><a href="#">Moderate</a></li>
+        <li uk-filter-control="filter: [data-ease='advanced']; group: data-ease" class="uk-button uk-width-1-1"><a href="#">Advanced</a></li>
       </div>
     </div>
   </div>
+</div>
