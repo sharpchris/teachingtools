@@ -17,62 +17,68 @@
 <div class="uk-container" uk-filter="target: .js-filter">
 
   <!---Filtering Controls-->
-  <div class="uk-flex uk-flex-center" uk-margin>
-    <div>
-        <ul class="uk-subnav uk-subnav-pill uk-padding-remove" uk-margin>
-            <li class="uk-active" uk-filter-control><a href="#">Clear all filters</a></li>
-        </ul>
+<div class="uk-flex uk-flex-center" uk-margin>
+  <div>
+      <ul class="uk-subnav uk-subnav-pill uk-padding-remove" uk-margin>
+          <li class="uk-active" uk-filter-control style="margin-left:-40px"><a href="#">Clear all filters</a></li>
+      </ul>
+  </div>
+</div>
+<div class="uk-container uk-margin">
+  <div class="uk-grid-small" uk-grid>
+    <div class="uk-width-1-1 uk-text-center"><h3 class="uk-heading-divider" style="margin-left:-40px">Categories</h3></div>
+  </div>
+  <div class="uk-grid-small" uk-grid>
+    <div class="uk-width-1-1 uk-text-center uk-flex-center uk-subnav uk-subnav-pill">
+      
+        <li uk-filter-control="filter: [data-collab='collab']; group: data-collab" uk-toggle="target: .filter-control-collab" class="filter-control-collab uk-button" uk-tooltip="Tools that allows students to work together">Collaboration</li>
+        <li uk-filter-control="filter: ; group: data-collab" uk-toggle="target: .filter-control-collab" class="filter-control-collab uk-button uk-button-primary" uk-tooltip="Tools that allows students to work together" hidden>Collaboration</li>
+      
+        <li uk-filter-control="filter: [data-video='video']; group: data-video" uk-toggle="target: .filter-control-video" class="filter-control-video uk-button" uk-tooltip="Tools for recording or delivering video content">Videos</li>
+        <li uk-filter-control="filter: ; group: data-video" uk-toggle="target: .filter-control-video" class="filter-control-video uk-button uk-button-primary" uk-tooltip="Tools for recording or delivering video content" hidden>Videos</li>
+      
+        <li uk-filter-control="filter: [data-productivity='productivity']; group: data-productivity" uk-toggle="target: .filter-control-productivity" class="filter-control-productivity uk-button" uk-tooltip="Tools for writing and creating (non-video) content">Productivity</li>
+        <li uk-filter-control="filter: ; group: data-productivity" uk-toggle="target: .filter-control-productivity" class="filter-control-productivity uk-button uk-button-primary" uk-tooltip="Tools for writing and creating (non-video) content" hidden>Productivity</li>
+      
+        <li uk-filter-control="filter: [data-web='web']; group: data-web" uk-toggle="target: .filter-control-web" class="filter-control-web uk-button" uk-tooltip="Tools for creating or hosting small websites">ePortfolios and Websites</li>
+        <li uk-filter-control="filter: ; group: data-web" uk-toggle="target: .filter-control-web" class="filter-control-web uk-button uk-button-primary" uk-tooltip="Tools for creating or hosting small websites" hidden>ePortfolios and Websites</li>
+      
+        <li uk-filter-control="filter: [data-response='response']; group: data-response" uk-toggle="target: .filter-control-response" class="filter-control-response uk-button" uk-tooltip="Tools for giving students an opportunity to engage with prompts during live classes">Classroom Response</li>
+        <li uk-filter-control="filter: ; group: data-response" uk-toggle="target: .filter-control-response" class="filter-control-response uk-button uk-button-primary" uk-tooltip="Tools for giving students an opportunity to engage with prompts during live classes" hidden>Classroom Response</li>
+      
+        <li uk-filter-control="filter: [data-integrity='integrity']; group: data-integrity" uk-toggle="target: .filter-control-integrity" class="filter-control-integrity uk-button" uk-tooltip="Tools to discourage academic dishonesty">Academic Integrity</li>
+        <li uk-filter-control="filter: ; group: data-integrity" uk-toggle="target: .filter-control-integrity" class="filter-control-integrity uk-button uk-button-primary" uk-tooltip="Tools to discourage academic dishonesty" hidden>Academic Integrity</li>
+      
+        <li uk-filter-control="filter: [data-resources='resources']; group: data-resources" uk-toggle="target: .filter-control-resources" class="filter-control-resources uk-button" uk-tooltip="Resources for learning and professional development">Educational Resources</li>
+        <li uk-filter-control="filter: ; group: data-resources" uk-toggle="target: .filter-control-resources" class="filter-control-resources uk-button uk-button-primary" uk-tooltip="Resources for learning and professional development" hidden>Educational Resources</li>
+      
+        <li uk-filter-control="filter: [data-grading='grading']; group: data-grading" uk-toggle="target: .filter-control-grading" class="filter-control-grading uk-button" uk-tooltip="Tools to streamline grading and assessing students&#x27; work">Grading and Assessment</li>
+        <li uk-filter-control="filter: ; group: data-grading" uk-toggle="target: .filter-control-grading" class="filter-control-grading uk-button uk-button-primary" uk-tooltip="Tools to streamline grading and assessing students&#x27; work" hidden>Grading and Assessment</li>
+      
     </div>
   </div>
-  <div class="uk-container uk-margin">
-    <div class="uk-grid-small" uk-grid>
-      <div class="uk-width-1-1 uk-text-center"><h3 class="uk-heading-divider">Categories</h3></div>
-    </div>
-    <div class="uk-grid-small" uk-grid>
-      <div class="uk-width-1-1 uk-flex-center uk-flex-wrap uk-text-center uk-remove-margin">
-        
-          <button uk-filter-control="filter: [data-collab='collab']; group: data-collab" uk-toggle="target: .filter-control-collab" class="filter-control-collab uk-button" uk-tooltip="Tools that allows students to work together">Collaboration</button>
-          <button uk-filter-control="filter: ; group: data-collab" uk-toggle="target: .filter-control-collab" class="filter-control-collab uk-button uk-button-primary uk-button" uk-tooltip="Tools that allows students to work together" hidden>Collaboration</button>
-        
-          <button uk-filter-control="filter: [data-video='video']; group: data-video" uk-toggle="target: .filter-control-video" class="filter-control-video uk-button" uk-tooltip="Tools for recording or delivering video content">Videos</button>
-          <button uk-filter-control="filter: ; group: data-video" uk-toggle="target: .filter-control-video" class="filter-control-video uk-button uk-button-primary uk-button" uk-tooltip="Tools for recording or delivering video content" hidden>Videos</button>
-        
-          <button uk-filter-control="filter: [data-productivity='productivity']; group: data-productivity" uk-toggle="target: .filter-control-productivity" class="filter-control-productivity uk-button" uk-tooltip="Tools for writing and creating (non-video) content">Productivity</button>
-          <button uk-filter-control="filter: ; group: data-productivity" uk-toggle="target: .filter-control-productivity" class="filter-control-productivity uk-button uk-button-primary uk-button" uk-tooltip="Tools for writing and creating (non-video) content" hidden>Productivity</button>
-        
-          <button uk-filter-control="filter: [data-web='web']; group: data-web" uk-toggle="target: .filter-control-web" class="filter-control-web uk-button" uk-tooltip="Tools for creating or hosting small websites">ePortfolios and Websites</button>
-          <button uk-filter-control="filter: ; group: data-web" uk-toggle="target: .filter-control-web" class="filter-control-web uk-button uk-button-primary uk-button" uk-tooltip="Tools for creating or hosting small websites" hidden>ePortfolios and Websites</button>
-        
-          <button uk-filter-control="filter: [data-response='response']; group: data-response" uk-toggle="target: .filter-control-response" class="filter-control-response uk-button" uk-tooltip="Tools for giving students an opportunity to engage with prompts during live classes">Classroom Response</button>
-          <button uk-filter-control="filter: ; group: data-response" uk-toggle="target: .filter-control-response" class="filter-control-response uk-button uk-button-primary uk-button" uk-tooltip="Tools for giving students an opportunity to engage with prompts during live classes" hidden>Classroom Response</button>
-        
-          <button uk-filter-control="filter: [data-integrity='integrity']; group: data-integrity" uk-toggle="target: .filter-control-integrity" class="filter-control-integrity uk-button" uk-tooltip="Tools to discourage academic dishonesty">Academic Integrity</button>
-          <button uk-filter-control="filter: ; group: data-integrity" uk-toggle="target: .filter-control-integrity" class="filter-control-integrity uk-button uk-button-primary uk-button" uk-tooltip="Tools to discourage academic dishonesty" hidden>Academic Integrity</button>
-        
-          <button uk-filter-control="filter: [data-resources='resources']; group: data-resources" uk-toggle="target: .filter-control-resources" class="filter-control-resources uk-button" uk-tooltip="Resources for learning and professional development">Educational Resources</button>
-          <button uk-filter-control="filter: ; group: data-resources" uk-toggle="target: .filter-control-resources" class="filter-control-resources uk-button uk-button-primary uk-button" uk-tooltip="Resources for learning and professional development" hidden>Educational Resources</button>
-        
-          <button uk-filter-control="filter: [data-grading='grading']; group: data-grading" uk-toggle="target: .filter-control-grading" class="filter-control-grading uk-button" uk-tooltip="Tools to streamline grading and assessing students&#x27; work">Grading and Assessment</button>
-          <button uk-filter-control="filter: ; group: data-grading" uk-toggle="target: .filter-control-grading" class="filter-control-grading uk-button uk-button-primary uk-button" uk-tooltip="Tools to streamline grading and assessing students&#x27; work" hidden>Grading and Assessment</button>
-        
+  <div class="uk-grid-small" uk-grid>
+    <div class="uk-width-1-2">
+      <h3 class="uk-heading-divider uk-text-center" style="margin-left:-40px">Pricing</h3>
+      <div class="uk-width-1-1 uk-flex-column uk-text-center uk-subnav uk-subnav-pill" uk-switcher>
+        <li uk-filter-control="filter: ; group: data-price" class="uk-button uk-width-1-1"><a href="#">Any Pricing Structure</a></li>
+        <li uk-filter-control="filter: [data-price='free']; group: data-price" class="uk-button uk-width-1-1"><a href="#">Free or Free Tier Available</a></li>
+        <li uk-filter-control="filter: [data-price='facultyPays']; group: data-price" class="uk-button uk-width-1-1"><a href="#">Paid for by Faculty or Department</a></li>  
+        <li uk-filter-control="filter: [data-price='studentPays']; group: data-price" class="uk-button uk-width-1-1"><a href="#">Paid for by Student</a></li>
+        <li uk-filter-control="filter: [data-price='bothPay']; group: data-price" class="uk-button uk-width-1-1"><a href="#">Paid for by Both/Either</a></li>
       </div>
     </div>
-    <div class="uk-grid-small" uk-grid>
-      <div class="uk-width-1-2 uk-flex-column uk-text-center">
-        <div class="uk-width-1-1 uk-text-center"><h3 class="uk-heading-divider">Pricing</h3></div>
-        <button uk-filter-control="filter: [data-price='free']; group: data-price" class="uk-button uk-width-1-1">Free or Free Tier Available</button>
-        <button uk-filter-control="filter: [data-price='facultyPays']; group: data-price" class="uk-button uk-width-1-1">Paid for by Faculty or Department</button>
-        <button uk-filter-control="filter: [data-price='studentPays']; group: data-price" class="uk-button uk-width-1-1">Paid for by Student</button>
-        <button uk-filter-control="filter: [data-price='bothPay']; group: data-price" class="uk-button uk-width-1-1">Paid for by Both/Either</button>
-      </div>
-      <div class="uk-width-1-2 uk-flex-column uk-text-center">
-        <div class="uk-width-1-1 uk-text-center"><h3 class="uk-heading-divider">Complexity</h3></div>
-        <button uk-filter-control="filter: [data-ease='simple']; group: data-ease" class="uk-button uk-width-1-1">Simple</button>
-        <button uk-filter-control="filter: [data-ease='moderate']; group: data-ease" class="uk-button uk-width-1-1">Moderate</button>
-        <button uk-filter-control="filter: [data-ease='advanced']; group: data-ease" class="uk-button uk-width-1-1">Advanced</button>
+    <div class="uk-width-1-2">
+      <h3 class="uk-heading-divider uk-text-center" style="margin-left:-40px">Complexity</h3>
+      <div class="uk-width-1-1 uk-flex-column uk-text-center uk-subnav uk-subnav-pill" uk-switcher>
+        <li uk-filter-control="filter: ; group: data-ease" class="uk-button uk-width-1-1"><a href="#">Any Complexity Level</a></li>
+        <li uk-filter-control="filter: [data-ease='simple']; group: data-ease" class="uk-button uk-width-1-1"><a href="#">Simple</a></li>
+        <li uk-filter-control="filter: [data-ease='moderate']; group: data-ease" class="uk-button uk-width-1-1"><a href="#">Moderate</a></li>
+        <li uk-filter-control="filter: [data-ease='advanced']; group: data-ease" class="uk-button uk-width-1-1"><a href="#">Advanced</a></li>
       </div>
     </div>
   </div>
+</div>
 
   <!---Tool Cards Grid-->
   <ul class="js-filter uk-child-width-1-2 uk-child-width-1-3@m uk-text-center" uk-grid="masonry: true">
