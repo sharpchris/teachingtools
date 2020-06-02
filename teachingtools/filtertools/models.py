@@ -32,12 +32,12 @@ class Tool(models.Model):
     ]
     ease_of_use = models.CharField(max_length=20, choices=EASE_OF_USE_CHOICES)
     PRICE_CHOICES = [
-        ('0', 'No cost to you'),
-        ('$', '$'),
-        ('$$', '$$'),
-        ('$$$', '$$$'),
+        ('free', 'Free or Free Tier Available'),
+        ('facultyPays', 'Paid for by Faculty or Department'),
+        ('stuentPays', 'Paid for by Student'),
+        ('bothPay', 'Paid for by Both/Either'),
     ]
-    price = models.CharField(max_length=5, choices=PRICE_CHOICES)
+    price = models.CharField(max_length=20, choices=PRICE_CHOICES)
     website = models.URLField()
     slug = models.SlugField(max_length=50, unique=True, help_text="A short version of the title of the tool with no spaces used if a page is built for the tool, for example mainpage.com/[slug].")
     publish = models.BooleanField(default=False, help_text="Not yet functional.")
