@@ -22,8 +22,8 @@
 
           <!---Card Body for {{ tool['fields']['Tool Name'] }}-->
           <div class="uk-card-body">
-            <p>You might use {{ tool['fields']['Tool Name'] }} if...</p>
-            <p>{{ tool['fields']['You might use this tool if...'] }}</p>
+            {# Bring in the first letter of the "You might use this tool if" statement as lowercase, then the rest of the statement #}
+            <p>You might use {{ tool['fields']['Tool Name'] }} if {{ tool['fields']['You might use this tool if...'][0]|lower }}{{ tool['fields']['You might use this tool if...'][:1] }}</p>
             <span>{% if tool['fields']['Categories']|length <= 1 %}Category: {% else %} Categories: {% endif %}</span>
               {% for category_id in tool['fields']['Categories'] %}
                 <span class="uk-badge">{{ category_list | selectattr('id', 'eq', category_id) | map(attribute='fields') | map(attribute='Category') | list | join() }}</span>
