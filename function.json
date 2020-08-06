@@ -1,0 +1,13 @@
+{
+    "bindings": [
+        {
+            "name": "outputblob",
+            "type": "blob",
+            "path": "samples-workitems/{queueTrigger}-Copy",
+            "connection": "MyStorageConnectionAppSetting",
+            "direction": "out"
+        }
+    ],
+    "disabled": false,
+    "scriptFile": "__init__.py"
+  }

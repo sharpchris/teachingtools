@@ -9,7 +9,12 @@ def get_data(table):
     AIRTABLE_BASE_ID = os.getenv("AIRTABLE_BASE_ID")
 
     airtable = Airtable(AIRTABLE_BASE_ID, table, api_key=AIRTABLE_API_KEY)
-    all_data = airtable.get_all()
+
+    # Only published Tools should be returned; for other tables return all
+    if table == "Tools":
+        all_data = airtable.search('Publish', 1)
+    else:
+        all_data = airtable.get_all()
 
     return(all_data)
 
