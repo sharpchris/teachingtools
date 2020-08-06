@@ -1,9 +1,12 @@
 <!---Filtering Controls-->
-<div class="uk-container uk-margin">
+<div class="uk-container uk-margin uk-text-center">
+  <p><strong>Instructions: </strong>
+  Below are some of the tools that you might use while teaching classes. To filter the tools by category, select one or more categories. For example, if you want to see tools that are 
+  collaborative and use video, then select both the "Collaboration" and "Video" categories. Tools can also be filtered by their pricing model and by the complexity involved in setting up or using the tool.</p>
   <div class="uk-grid-small" uk-grid>
     <div class="uk-width-1-3 uk-text-center">
       <!--Category Selectors-->
-      <h3 class="uk-heading-divider" style="margin-left:-40px">Categories</h3>
+      <h3 class="uk-heading-divider">Categories</h3>
       <div class="uk-width-1-1 uk-flex-column uk-text-center uk-flex-center uk-subnav uk-subnav-pill">
         {% for category in category_list %}
         {# {% if loop.index % 2 == } #}
@@ -22,7 +25,7 @@
       <div class="uk-width-1-1 uk-flex-column uk-text-center uk-subnav uk-subnav-pill" uk-switcher>
         <li uk-filter-control="filter: ; group: data-price" class="uk-button uk-width-1-1"><a href="#">Any Pricing Structure</a></li>
         <li uk-filter-control="filter: [data-price='free']; group: data-price" class="uk-button uk-width-1-1"><a href="#">Free or Free Tier Available</a></li>
-        <li uk-filter-control="filter: [data-price='facultyPays']; group: data-price" class="uk-button uk-width-1-1"><a href="#">Paid for by Faculty or Department</a></li>  
+        <li uk-filter-control="filter: [data-price='facultyPays']; group: data-price" class="uk-button uk-width-1-1"><a href="#">Paid for by Faculty</a></li>  
         <li uk-filter-control="filter: [data-price='studentPays']; group: data-price" class="uk-button uk-width-1-1"><a href="#">Paid for by Student</a></li>
         <li uk-filter-control="filter: [data-price='bothPay']; group: data-price" class="uk-button uk-width-1-1"><a href="#">Paid for by Both/Either</a></li>
       </div>
