@@ -24,7 +24,7 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
 
     # Templating
     jinja = Environment(
-        loader=FileSystemLoader('./docs/templates'),
+        loader=FileSystemLoader('../docs/templates'),
         autoescape=select_autoescape(['html', 'xml'])
     )
 

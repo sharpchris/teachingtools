@@ -18,12 +18,12 @@
 <div class="uk-container uk-margin uk-text-center">
   <p><strong>Instructions: </strong>
   Below are some of the tools that you might use while teaching classes. To filter the tools by category, select one or more categories. For example, if you want to see tools that are 
-  collaborative and use video, then select both the "Collaboration" and "Video" categories. Tools can also be filtered by their pricing model and by the complexity involved in setting up or using the tool.</p>
+  collaborative and use video, then select both the "Collaboration" and "Videos" categories. Tools can also be filtered by their pricing model and by the complexity involved in setting up or using the tool.</p>
   <div class="uk-grid-small" uk-grid>
     <div class="uk-width-1-3 uk-text-center">
       <!--Category Selectors-->
       <h3 class="uk-heading-divider">Categories</h3>
-      <div class="uk-width-1-1 uk-flex-column uk-text-center uk-flex-center uk-subnav uk-subnav-pill">
+      <div class="uk-flex-column uk-text-center uk-subnav uk-subnav-pill">
         
         
         <li uk-filter-control="filter: [data-response='response']; group: data-response" 
@@ -75,6 +75,13 @@
                 class="filter-control-productivity uk-button uk-button-primary" uk-tooltip="Tools for writing and creating (non-video) content" hidden>Productivity</li>
         
         
+        <li uk-filter-control="filter: [data-accessibility='accessibility']; group: data-accessibility" 
+                uk-toggle="target: .filter-control-accessibility" class="filter-control-accessibility uk-button" 
+                uk-tooltip="Tools to make content more usable for all learners.">Accessibility</li>
+        <li uk-filter-control="filter: ; group: data-accessibility" uk-toggle="target: .filter-control-accessibility" 
+                class="filter-control-accessibility uk-button uk-button-primary" uk-tooltip="Tools to make content more usable for all learners." hidden>Accessibility</li>
+        
+        
         <li uk-filter-control="filter: [data-collaboration='collaboration']; group: data-collaboration" 
                 uk-toggle="target: .filter-control-collaboration" class="filter-control-collaboration uk-button" 
                 uk-tooltip="Tools that allow students to work together">Collaboration</li>
@@ -87,7 +94,7 @@
     <!--Pricing Controls-->
     <div class="uk-width-1-3">
       <h3 class="uk-heading-divider uk-text-center" style="margin-left:-40px">Pricing</h3>
-      <div class="uk-width-1-1 uk-flex-column uk-text-center uk-subnav uk-subnav-pill" uk-switcher>
+      <div class="uk-flex-column uk-text-center uk-subnav uk-subnav-pill" uk-switcher>
         <li uk-filter-control="filter: ; group: data-price" class="uk-button uk-width-1-1"><a href="#">Any Pricing Structure</a></li>
         <li uk-filter-control="filter: [data-price='free']; group: data-price" class="uk-button uk-width-1-1"><a href="#">Free or Free Tier Available</a></li>
         <li uk-filter-control="filter: [data-price='facultyPays']; group: data-price" class="uk-button uk-width-1-1"><a href="#">Paid for by Faculty</a></li>  
@@ -99,7 +106,7 @@
     <!--Complexity Controls-->
     <div class="uk-width-1-3">
         <h3 class="uk-heading-divider uk-text-center" style="margin-left:-40px">Complexity</h3>
-        <div class="uk-width-1-1 uk-flex-column uk-text-center uk-subnav uk-subnav-pill" uk-switcher>
+        <div class="uk-flex-column uk-text-center uk-subnav uk-subnav-pill" uk-switcher>
           <li uk-filter-control="filter: ; group: data-ease" class="uk-button uk-width-1-1"><a href="#">Any Complexity Level</a></li>
           <li uk-filter-control="filter: [data-ease='simple']; group: data-ease" class="uk-button uk-width-1-1"><a href="#">Simple</a></li>
           <li uk-filter-control="filter: [data-ease='moderate']; group: data-ease" class="uk-button uk-width-1-1"><a href="#">Moderate</a></li>
@@ -112,6 +119,70 @@
 
   <!---Tool Cards Grid-->
   <ul class="js-filter uk-child-width-1-2 uk-child-width-1-3@m uk-text-center" uk-grid="masonry: true">
+    
+      <li  
+                data-productivity
+                ="productivity"
+                 
+                data-response
+                ="response"
+                 
+                data-price='free' 
+                data-ease='simple'>
+
+        <div class="uk-card uk-card-default uk-card-hover">
+            <!--Card Header for Microsoft Forms-->
+          <div class="uk-card-header">
+            <img src="https://dl.airtable.com/.attachments/4fcc17733b017f72b0d240ba7b2d7c74/4c49699b/tc-img-grid-forms.png" alt="Microsoft Forms">
+          </div>
+
+          <!---Card Body for Microsoft Forms-->
+          <div class="uk-card-body">
+            
+            <p>You might use Microsoft Forms if you want to create quick and informal surveys that are saved to Excel.</p>
+            <span> Categories: </span>
+              
+                <span class="uk-badge">Productivity</span>
+              
+                <span class="uk-badge">Classroom Response</span>
+              
+          </div>
+
+          <!--Card Footer for Microsoft Forms-->
+          <div class="uk-card-footer">
+            <button class="uk-button uk-button-default uk-margin-small-right" type="button" uk-toggle="target: #modal-rec2XopXYuPYKGLen">More Info</button>
+          </div>
+        </div>
+      </li>
+
+      <!--Tool Modal for Microsoft Forms-->
+      <div id="modal-rec2XopXYuPYKGLen" uk-modal >
+        <div class="uk-modal-dialog uk-modal-body">
+          <h2 class="uk-modal-title">Microsoft Forms</h2>
+          <p>Microsoft Forms is a survey and quiz creation tool that can be used in conjunction with Microsoft Excel to collect and analyze data. It may be especially useful for creating end-of-class check-ins or mid-semester feedback forms with your students. Surveys and quizzes created through Forms can be shared with others through Teams or through a generated URL once privacy settings are adjusted. Respondents can be set to public users, anonymous users, or limited to University of Florida members with a Gatorlink.</p>
+          <p class="uk-text-lead">Pricing Details</p>
+          <p>Campus-wide license</p>
+          <p class="uk-text-lead">Links</p>
+          <ul>
+            <li><a href="https://ufl.instructure.com/courses/370477/pages/microsoft-forms?module_item_id=7925929" target="_blank">Tool Page</a></li>
+            <li><a href="https://forms.office.com/" target="_blank">Website</a></li>
+            <li><a href="https://helpdesk.ufl.edu/" target="_blank">Getting Support</a></li>
+          </ul>
+          <p class="uk-text-lead">Screenshots</p>
+          <!--Screenshots for Microsoft Forms-->
+          <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slider>
+            <ul class="uk-slider-items uk-grid">
+              
+          </ul>
+          <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slider-item="previous"></a>
+          <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slider-item="next"></a>
+          </div>
+          <p class="uk-text-right">
+              <button class="uk-button uk-button-default uk-modal-close" type="button">Close</button>
+          </p>
+        </div>
+      </div>
+      
     
       <li  
                 data-collaboration
@@ -152,9 +223,9 @@
           <p></p>
           <p class="uk-text-lead">Links</p>
           <ul>
-            <li><a href="">Tool Page</a></li>
-            <li><a href="http://teams.microsoft.com">Website</a></li>
-            <li><a href="http://helpdesk.ufl.edu/">Getting Support</a></li>
+            <li><a href="" target="_blank">Tool Page</a></li>
+            <li><a href="http://teams.microsoft.com" target="_blank">Website</a></li>
+            <li><a href="http://helpdesk.ufl.edu/" target="_blank">Getting Support</a></li>
           </ul>
           <p class="uk-text-lead">Screenshots</p>
           <!--Screenshots for Microsoft Teams-->
@@ -218,9 +289,9 @@
           <p>Plan options start at $120/yr for audiences &gt; 25</p>
           <p class="uk-text-lead">Links</p>
           <ul>
-            <li><a href="">Tool Page</a></li>
-            <li><a href="https://www.polleverywhere.com/">Website</a></li>
-            <li><a href="https://www.polleverywhere.com/guides/">Getting Support</a></li>
+            <li><a href="" target="_blank">Tool Page</a></li>
+            <li><a href="https://www.polleverywhere.com/" target="_blank">Website</a></li>
+            <li><a href="https://www.polleverywhere.com/guides/" target="_blank">Getting Support</a></li>
           </ul>
           <p class="uk-text-lead">Screenshots</p>
           <!--Screenshots for Poll Everywhere-->
@@ -291,9 +362,9 @@
           <p>Campus-wide license</p>
           <p class="uk-text-lead">Links</p>
           <ul>
-            <li><a href="https://ufl.instructure.com/courses/370477/pages/honorlock?module_item_id=7853067">Tool Page</a></li>
-            <li><a href="https://honorlock.com/">Website</a></li>
-            <li><a href="https://dce.ufl.edu/services/online-proctoring/">Getting Support</a></li>
+            <li><a href="https://ufl.instructure.com/courses/370477/pages/honorlock?module_item_id=7853067" target="_blank">Tool Page</a></li>
+            <li><a href="https://honorlock.com/" target="_blank">Website</a></li>
+            <li><a href="https://dce.ufl.edu/services/online-proctoring/" target="_blank">Getting Support</a></li>
           </ul>
           <p class="uk-text-lead">Screenshots</p>
           <!--Screenshots for Honorlock-->
@@ -350,9 +421,9 @@
           <p>Part of Adobe Creative Cloud</p>
           <p class="uk-text-lead">Links</p>
           <ul>
-            <li><a href="">Tool Page</a></li>
-            <li><a href="https://spark.adobe.com/">Website</a></li>
-            <li><a href="https://adobespark.zendesk.com/hc/en-us/categories/202688167-Adobe-Spark">Getting Support</a></li>
+            <li><a href="" target="_blank">Tool Page</a></li>
+            <li><a href="https://spark.adobe.com/" target="_blank">Website</a></li>
+            <li><a href="https://adobespark.zendesk.com/hc/en-us/categories/202688167-Adobe-Spark" target="_blank">Getting Support</a></li>
           </ul>
           <p class="uk-text-lead">Screenshots</p>
           <!--Screenshots for Adobe Spark-->
@@ -428,9 +499,9 @@
           <p>Campus-wide license</p>
           <p class="uk-text-lead">Links</p>
           <ul>
-            <li><a href="">Tool Page</a></li>
-            <li><a href="https://elearning.ufl.edu/">Website</a></li>
-            <li><a href="https://elearning.ufl.edu/instructor-help/">Getting Support</a></li>
+            <li><a href="" target="_blank">Tool Page</a></li>
+            <li><a href="https://elearning.ufl.edu/" target="_blank">Website</a></li>
+            <li><a href="https://elearning.ufl.edu/instructor-help/" target="_blank">Getting Support</a></li>
           </ul>
           <p class="uk-text-lead">Screenshots</p>
           <!--Screenshots for VoiceThread-->
@@ -464,6 +535,70 @@
                       <div class="uk-position-center uk-panel"></div>
                   </div>
               </li>
+              
+          </ul>
+          <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slider-item="previous"></a>
+          <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slider-item="next"></a>
+          </div>
+          <p class="uk-text-right">
+              <button class="uk-button uk-button-default uk-modal-close" type="button">Close</button>
+          </p>
+        </div>
+      </div>
+      
+    
+      <li  
+                data-collaboration
+                ="collaboration"
+                 
+                data-grading
+                ="grading"
+                 
+                data-price='free' 
+                data-ease='advanced'>
+
+        <div class="uk-card uk-card-default uk-card-hover">
+            <!--Card Header for Perusall-->
+          <div class="uk-card-header">
+            <img src="https://dl.airtable.com/.attachments/0e02916b3e01bebc9cd7440fd7ab5197/d9557493/Perusall.png" alt="Perusall">
+          </div>
+
+          <!---Card Body for Perusall-->
+          <div class="uk-card-body">
+            
+            <p>You might use Perusall if you want to increase student engagement and allow them to create shared annotations on course readings.</p>
+            <span> Categories: </span>
+              
+                <span class="uk-badge">Collaboration</span>
+              
+                <span class="uk-badge">Assessment and Grading</span>
+              
+          </div>
+
+          <!--Card Footer for Perusall-->
+          <div class="uk-card-footer">
+            <button class="uk-button uk-button-default uk-margin-small-right" type="button" uk-toggle="target: #modal-recXN7I27cHvYaL4B">More Info</button>
+          </div>
+        </div>
+      </li>
+
+      <!--Tool Modal for Perusall-->
+      <div id="modal-recXN7I27cHvYaL4B" uk-modal >
+        <div class="uk-modal-dialog uk-modal-body">
+          <h2 class="uk-modal-title">Perusall</h2>
+          <p>One way to increase learner engagement is through group annotation of assigned readings (e.g., articles, textbook). Perusall facilitates a deep reading experience in a learning community by providing an online platform for capturing the comments and questions of peers and the instructor. Perusall can auto-grade student comments (number and content quality (Links to an external site.)) and integrates with the Canvas Gradebook (Links to an external site.).</p>
+          <p class="uk-text-lead">Pricing Details</p>
+          <p>Campus-wide license</p>
+          <p class="uk-text-lead">Links</p>
+          <ul>
+            <li><a href="https://ufl.instructure.com/courses/370477/pages/perusall?module_item_id=7844547" target="_blank">Tool Page</a></li>
+            <li><a href="https://perusall.com/" target="_blank">Website</a></li>
+            <li><a href="https://support.perusall.com/hc/en-us" target="_blank">Getting Support</a></li>
+          </ul>
+          <p class="uk-text-lead">Screenshots</p>
+          <!--Screenshots for Perusall-->
+          <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slider>
+            <ul class="uk-slider-items uk-grid">
               
           </ul>
           <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slider-item="previous"></a>
@@ -515,9 +650,9 @@
           <p>Included in Canvas LMS</p>
           <p class="uk-text-lead">Links</p>
           <ul>
-            <li><a href="">Tool Page</a></li>
-            <li><a href="https://elearning.ufl.edu/">Website</a></li>
-            <li><a href="https://elearning.ufl.edu/instructor-help/">Getting Support</a></li>
+            <li><a href="" target="_blank">Tool Page</a></li>
+            <li><a href="https://elearning.ufl.edu/" target="_blank">Website</a></li>
+            <li><a href="https://elearning.ufl.edu/instructor-help/" target="_blank">Getting Support</a></li>
           </ul>
           <p class="uk-text-lead">Screenshots</p>
           <!--Screenshots for Canvas Discussion Boards-->
@@ -588,9 +723,9 @@
           <p>Free for all members of UF</p>
           <p class="uk-text-lead">Links</p>
           <ul>
-            <li><a href="">Tool Page</a></li>
-            <li><a href="https://www.linkedin.com/learning/">Website</a></li>
-            <li><a href="https://training.it.ufl.edu/linkedin/">Getting Support</a></li>
+            <li><a href="" target="_blank">Tool Page</a></li>
+            <li><a href="https://www.linkedin.com/learning/" target="_blank">Website</a></li>
+            <li><a href="https://training.it.ufl.edu/linkedin/" target="_blank">Getting Support</a></li>
           </ul>
           <p class="uk-text-lead">Screenshots</p>
           <!--Screenshots for LinkedIn Learning-->
@@ -610,6 +745,65 @@
                       <div class="uk-position-center uk-panel"></div>
                   </div>
               </li>
+              
+          </ul>
+          <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slider-item="previous"></a>
+          <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slider-item="next"></a>
+          </div>
+          <p class="uk-text-right">
+              <button class="uk-button uk-button-default uk-modal-close" type="button">Close</button>
+          </p>
+        </div>
+      </div>
+      
+    
+      <li  
+                data-collaboration
+                ="collaboration"
+                 
+                data-price='free' 
+                data-ease='simple'>
+
+        <div class="uk-card uk-card-default uk-card-hover">
+            <!--Card Header for Google Chat-->
+          <div class="uk-card-header">
+            <img src="https://dl.airtable.com/.attachments/2e26ccee44b39cb7a9134aa979f3515f/0b962ba3/1200px-Google_Chat.svg.png" alt="Google Chat">
+          </div>
+
+          <!---Card Body for Google Chat-->
+          <div class="uk-card-body">
+            
+            <p>You might use Google Chat if you want to provide an informal communication environment for your class.</p>
+            <span>Category: </span>
+              
+                <span class="uk-badge">Collaboration</span>
+              
+          </div>
+
+          <!--Card Footer for Google Chat-->
+          <div class="uk-card-footer">
+            <button class="uk-button uk-button-default uk-margin-small-right" type="button" uk-toggle="target: #modal-reccjrYGhp0KOGX5U">More Info</button>
+          </div>
+        </div>
+      </li>
+
+      <!--Tool Modal for Google Chat-->
+      <div id="modal-reccjrYGhp0KOGX5U" uk-modal >
+        <div class="uk-modal-dialog uk-modal-body">
+          <h2 class="uk-modal-title">Google Chat</h2>
+          <p>Google Chat (also known as Hangouts Chat) is an instant messaging platform for users to communicate with others in one-on-one or group formats. You can create rooms for separate topics or groups and invite people to participate in these threaded discussions. Within these discussions, you can share files, start video meetings, and use a variety of emojis to react to messages.</p>
+          <p class="uk-text-lead">Pricing Details</p>
+          <p>Campus-wide license</p>
+          <p class="uk-text-lead">Links</p>
+          <ul>
+            <li><a href="https://ufl.instructure.com/courses/370477/pages/google-chat?module_item_id=7925924" target="_blank">Tool Page</a></li>
+            <li><a href="https://cloud.it.ufl.edu/collaboration-tools/g-suite/" target="_blank">Website</a></li>
+            <li><a href="http://helpdesk.ufl.edu/" target="_blank">Getting Support</a></li>
+          </ul>
+          <p class="uk-text-lead">Screenshots</p>
+          <!--Screenshots for Google Chat-->
+          <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slider>
+            <ul class="uk-slider-items uk-grid">
               
           </ul>
           <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slider-item="previous"></a>
@@ -661,9 +855,9 @@
           <p>Campus-wide license</p>
           <p class="uk-text-lead">Links</p>
           <ul>
-            <li><a href="">Tool Page</a></li>
-            <li><a href="https://it.ufl.edu/services/gatorcloud-onedrive-uf">Website</a></li>
-            <li><a href="http://helpdesk.ufl.edu/">Getting Support</a></li>
+            <li><a href="" target="_blank">Tool Page</a></li>
+            <li><a href="https://it.ufl.edu/services/gatorcloud-onedrive-uf" target="_blank">Website</a></li>
+            <li><a href="http://helpdesk.ufl.edu/" target="_blank">Getting Support</a></li>
           </ul>
           <p class="uk-text-lead">Screenshots</p>
           <!--Screenshots for Microsoft OneDrive / Office365-->
@@ -699,6 +893,9 @@
                 data-integrity
                 ="integrity"
                  
+                data-grading
+                ="grading"
+                 
                 data-price='free' 
                 data-ease='moderate'>
 
@@ -711,10 +908,12 @@
           <!---Card Body for Turnitin-->
           <div class="uk-card-body">
             
-            <p>You might use Turnitin if you want to evaluate students&#39; writing for originality.</p>
-            <span>Category: </span>
+            <p>You might use Turnitin if you might use this tool if you want to check students&#39; written work for plagiarism. You might also use it to help students identify accidental plagiarism in their own drafts.</p>
+            <span> Categories: </span>
               
                 <span class="uk-badge">Academic Integrity</span>
+              
+                <span class="uk-badge">Assessment and Grading</span>
               
           </div>
 
@@ -729,14 +928,14 @@
       <div id="modal-reci1x2YgexA9jxCm" uk-modal >
         <div class="uk-modal-dialog uk-modal-body">
           <h2 class="uk-modal-title">Turnitin</h2>
-          <p>A suite of online tools designed to enhance the Assignment submission process</p>
+          <p>A suite of online tools used to ensure academic integrity during the assignment submission process using plagiarism detection.</p>
           <p class="uk-text-lead">Pricing Details</p>
           <p>Campus-wide license</p>
           <p class="uk-text-lead">Links</p>
           <ul>
-            <li><a href="">Tool Page</a></li>
-            <li><a href="https://lss.at.ufl.edu/help/Turnitin">Website</a></li>
-            <li><a href="https://itsm.helpdesk.ufl.edu/sc/teaching-and-learning/assessment-systems/anti-plagiarism-tool-for-students-and-instructors">Getting Support</a></li>
+            <li><a href="" target="_blank">Tool Page</a></li>
+            <li><a href="https://elearning.ufl.edu/supported-services/turnitin/#d.en.487199" target="_blank">Website</a></li>
+            <li><a href="https://itsm.helpdesk.ufl.edu/sc/teaching-and-learning/assessment-systems/anti-plagiarism-tool-for-students-and-instructors" target="_blank">Getting Support</a></li>
           </ul>
           <p class="uk-text-lead">Screenshots</p>
           <!--Screenshots for Turnitin-->
@@ -793,9 +992,9 @@
           <p>Campus-wide license</p>
           <p class="uk-text-lead">Links</p>
           <ul>
-            <li><a href="">Tool Page</a></li>
-            <li><a href="https://mediasite.video.ufl.edu">Website</a></li>
-            <li><a href="https://video.ufl.edu/streaming/mediasite/help/">Getting Support</a></li>
+            <li><a href="" target="_blank">Tool Page</a></li>
+            <li><a href="https://mediasite.video.ufl.edu" target="_blank">Website</a></li>
+            <li><a href="https://video.ufl.edu/streaming/mediasite/help/" target="_blank">Getting Support</a></li>
           </ul>
           <p class="uk-text-lead">Screenshots</p>
           <!--Screenshots for Mediasite-->
