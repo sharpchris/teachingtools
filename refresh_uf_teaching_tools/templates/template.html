@@ -14,7 +14,8 @@
                 data-price='{{ pricing_list[tool['fields']['Pricing']] }}' 
                 data-ease='{{ tool['fields']['Ease of Use'] | lower }}'>
 
-        <div class="uk-card uk-card-default uk-card-hover">
+        <!-- Div containter for {{ tool['fields']['Tool Name'] }} that is a large toggle for the tool modal -->
+        <div class="uk-card uk-card-default uk-card-hover" uk-toggle="target: #modal-{{ tool['id'] }}">
             <!--Card Header for {{ tool['fields']['Tool Name'] }}-->
           <div class="uk-card-header">
             <img src="{{ tool['fields']['Logo'][0]['url'] }}" alt="{{ tool['fields']['Tool Name'] }}">
@@ -34,7 +35,7 @@
 
           <!--Card Footer for {{ tool['fields']['Tool Name'] }}-->
           <div class="uk-card-footer">
-            <button class="uk-button uk-button-default uk-margin-small-right" type="button" uk-toggle="target: #modal-{{ tool['id'] }}">More Info</button>
+            <button class="uk-button uk-button-default uk-margin-small-right" type="button">More Info</button>
           </div>
         </div>
       </li>
