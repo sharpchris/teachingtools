@@ -3,10 +3,13 @@ from jinja2 import Environment, FileSystemLoader, select_autoescape, Template
 from src.fetch_airtable import get_data
 from src.build_page import create_page
 import azure.functions as func
-
+import os
+from dotenv import load_dotenv
 
 def main(req: func.HttpRequest) -> func.HttpResponse:
     logging.info('Python HTTP trigger function processed a request.')
+
+    load_dotenv()
 
     # Fetch data from Airtable. Function requires a str that is the name of the table
     all_tools = get_data('Tools')
@@ -22,14 +25,18 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
 
     print(json.dumps(all_tools, sort_keys=True, indent=4))
 
-    # Templating
+    ## Templating
+    # Set template folder location
+    template_path=os.getenv("TEMPLATE_PATH")
+
+    # Create Jinja2 environment
     jinja = Environment(
-        loader=FileSystemLoader('../docs/templates'),
-        autoescape=select_autoescape(['html', 'xml'])
+        loader=FileSystemLoader(template_path),
+        autoescape=select_autoescape(['html'])
     )
 
-    # Pass info to index.html tmeplate
-    template = jinja.get_template('index.html')
+    # Pass info to template.html
+    template = jinja.get_template('template.html')
     page_content = template.render(tool_list=all_tools, category_list=all_categories, pricing_list=all_pricing)
 
     # Write the page content to a file
