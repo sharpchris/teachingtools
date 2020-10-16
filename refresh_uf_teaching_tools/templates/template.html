@@ -42,7 +42,14 @@
       <!--Tool Modal for {{ tool['fields']['Tool Name'] }}-->
       <div id="modal-{{ tool['id'] }}" uk-modal >
         <div class="uk-modal-dialog uk-modal-body">
-          <h2 class="uk-modal-title">{{ tool['fields']['Tool Name'] }}</h2>
+          <div class="uk-flex">
+            <h2 class="uk-modal-title">{{ tool['fields']['Tool Name'] }}</h2>
+            <div class="uk-margin-auto-left">
+              <p >
+                <button class="uk-button uk-button-default uk-modal-close" type="button">Close</button>
+              </p>
+            </div>
+          </div>
           <p>{{ tool['fields']['Description'] }}</p>
           <p class="uk-text-lead">Pricing Details</p>
           <p>{{ tool['fields']['Pricing Details'] }}</p>
@@ -54,19 +61,16 @@
           </ul>
           <p class="uk-text-lead">Screenshots</p>
           <!--Screenshots for {{ tool['fields']['Tool Name'] }}-->
-          <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slider>
-            <ul class="uk-slider-items uk-grid">
+          <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1">
+            <ul class="uk-grid">
               {% for screenshot in tool['fields']['Screenshots'] %}
                 <li class="uk-width-3-4">
-                  <div class="uk-panel" uk-lightbox>
+                  <div class="uk-panel uk-margin-bottom" uk-lightbox>
                     <a href="{{ screenshot['url'] }}"><img src="{{ screenshot['thumbnails']['large']['url'] }}" alt="Screenshot {{ loop.index }} for {{ tool['fields']['Tool Name'] }}"></a>
-                    <div class="uk-position-center uk-panel"></div>
                   </div>
                 </li>
               {% endfor %}
           </ul>
-          <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slider-item="previous"></a>
-          <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slider-item="next"></a>
           </div>
           <p class="uk-text-right">
               <button class="uk-button uk-button-default uk-modal-close" type="button">Close</button>
