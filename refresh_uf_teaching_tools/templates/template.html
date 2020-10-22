@@ -52,15 +52,17 @@
             </div>
           </div>
           <p>{{ tool['fields']['Description'] }}</p>
+          <p><a href="{{ tool['fields']['Tool Page'] }}" target="_blank">More Information</a></p>
           <p class="uk-text-lead">Pricing Details</p>
           <p>{{ tool['fields']['Pricing Details'] }}</p>
-          <p class="uk-text-lead">Links</p>
+          <p class="uk-text-lead">Vendor Links</p>
           <ul>
-            <li><a href="{{ tool['fields']['Tool Page'] }}" target="_blank">Tool Page</a></li>
             <li><a href="{{ tool['fields']['Website'] }}" target="_blank">Website</a></li>
-            <li><a href="{{ tool['fields']['Support'] }}" target="_blank">Getting Support</a></li>
+            <li><a href="{{ tool['fields']['Support'] }}" target="_blank">Support Resources</a></li>
           </ul>
           <p class="uk-text-lead">Screenshots</p>
+
+          {% if tool['fields']['Screenshots'] %}
           <!--Screenshots for {{ tool['fields']['Tool Name'] }}-->
           <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1">
             <ul class="uk-grid">
@@ -71,8 +73,9 @@
                   </div>
                 </li>
               {% endfor %}
-          </ul>
+            </ul>
           </div>
+          {% endif %}
           <p class="uk-text-right">
               <button class="uk-button uk-button-default uk-modal-close" type="button">Close</button>
           </p>
