@@ -2,9 +2,9 @@
 <div class="uk-container uk-margin uk-text-center">
   <p><strong>Instructions: </strong>
   Below are some of the tools that you might use while teaching classes. To filter the tools by category, select one or more categories. For example, if you want to see tools that are 
-  collaborative and use video, then select both the "Collaboration" and "Videos" categories. Tools can also be filtered by their pricing model and by the complexity involved in setting up or using the tool.</p>
+  collaborative <i>and</i> use video, then select both the "Collaboration" and "Videos" categories. Tools can also be filtered by their pricing model and by the complexity involved in setting up or using the tool.</p>
   <div class="uk-grid-small" uk-grid>
-    <div class="uk-width-1-3 uk-text-center">
+    <div class="uk-width-1-2 uk-text-center">
       <!--Category Selectors-->
       <h3 class="uk-heading-divider">Categories</h3>
       <div class="uk-flex-column uk-text-center uk-subnav uk-subnav-pill">
@@ -20,6 +20,7 @@
     </div>
 
     <!--Pricing Controls-->
+    <!-- hide pricing controls for now since all tools are under free tier
     <div class="uk-width-1-3">
       <h3 class="uk-heading-divider uk-text-center" style="margin-left:-40px">Pricing</h3>
       <div class="uk-flex-column uk-text-center uk-subnav uk-subnav-pill" uk-switcher>
@@ -30,9 +31,10 @@
         <li uk-filter-control="filter: [data-price='bothPay']; group: data-price" class="uk-button uk-width-1-1"><a href="#">Paid for by Both/Either</a></li>
       </div>
     </div>
+    -->
 
     <!--Complexity Controls-->
-    <div class="uk-width-1-3">
+    <div class="uk-width-1-2">
         <h3 class="uk-heading-divider uk-text-center" style="margin-left:-40px">Complexity</h3>
         <div class="uk-flex-column uk-text-center uk-subnav uk-subnav-pill" uk-switcher>
           <li uk-filter-control="filter: ; group: data-ease" class="uk-button uk-width-1-1"><a href="#">Any Complexity Level</a></li>
