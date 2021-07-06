@@ -1,5 +1,5 @@
 {
-    "python.pythonPath": "/home/sharpc/airtableteachingtools/.venv/bin/python3",
+    "python.pythonPath": "/home/sharpc/.pyenv/versions/3.7.9/envs/teachingtools/bin/python",
     "azureFunctions.deploySubpath": ".",
     "azureFunctions.scmDoBuildDuringDeployment": true,
     "azureFunctions.pythonVenv": ".venv",
